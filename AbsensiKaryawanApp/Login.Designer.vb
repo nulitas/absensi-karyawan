@@ -29,45 +29,61 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TxtUsername
         '
-        Me.TxtUsername.Location = New System.Drawing.Point(242, 149)
+        Me.TxtUsername.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.TxtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtUsername.Location = New System.Drawing.Point(4, 9)
         Me.TxtUsername.Name = "TxtUsername"
-        Me.TxtUsername.Size = New System.Drawing.Size(253, 27)
+        Me.TxtUsername.Size = New System.Drawing.Size(253, 20)
         Me.TxtUsername.TabIndex = 0
         '
         'TxtPassword
         '
-        Me.TxtPassword.Location = New System.Drawing.Point(242, 196)
+        Me.TxtPassword.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtPassword.Location = New System.Drawing.Point(4, 8)
         Me.TxtPassword.Name = "TxtPassword"
-        Me.TxtPassword.Size = New System.Drawing.Size(253, 27)
+        Me.TxtPassword.Size = New System.Drawing.Size(253, 20)
         Me.TxtPassword.TabIndex = 1
         '
         'BtnLogin
         '
-        Me.BtnLogin.Location = New System.Drawing.Point(291, 251)
+        Me.BtnLogin.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnLogin.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnLogin.Location = New System.Drawing.Point(100, 276)
         Me.BtnLogin.Name = "BtnLogin"
-        Me.BtnLogin.Size = New System.Drawing.Size(152, 29)
+        Me.BtnLogin.Size = New System.Drawing.Size(264, 52)
         Me.BtnLogin.TabIndex = 2
-        Me.BtnLogin.Text = "Login"
-        Me.BtnLogin.UseVisualStyleBackColor = True
+        Me.BtnLogin.Text = "SIGN IN"
+        Me.BtnLogin.UseVisualStyleBackColor = False
         '
         'LinkRegister
         '
         Me.LinkRegister.AutoSize = True
-        Me.LinkRegister.Location = New System.Drawing.Point(268, 308)
+        Me.LinkRegister.Location = New System.Drawing.Point(270, 348)
         Me.LinkRegister.Name = "LinkRegister"
-        Me.LinkRegister.Size = New System.Drawing.Size(195, 20)
+        Me.LinkRegister.Size = New System.Drawing.Size(61, 20)
         Me.LinkRegister.TabIndex = 3
         Me.LinkRegister.TabStop = True
-        Me.LinkRegister.Text = "Belum punya akun? Register"
+        Me.LinkRegister.Text = "Sign Up"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(125, 152)
+        Me.Label1.Location = New System.Drawing.Point(100, 75)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(75, 20)
         Me.Label1.TabIndex = 4
@@ -76,7 +92,7 @@ Partial Class Login
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(130, 203)
+        Me.Label2.Location = New System.Drawing.Point(100, 174)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 20)
         Me.Label2.TabIndex = 5
@@ -86,26 +102,91 @@ Partial Class Login
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(316, 56)
+        Me.Label3.Location = New System.Drawing.Point(219, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(127, 54)
+        Me.Label3.Size = New System.Drawing.Size(368, 54)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Login"
+        Me.Label3.Text = "Absensi Karyawan"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(133, 348)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(154, 20)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Belum memiliki akun?"
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.BtnLogin)
+        Me.Panel1.Controls.Add(Me.Panel3)
+        Me.Panel1.Controls.Add(Me.LinkRegister)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Location = New System.Drawing.Point(146, 125)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(472, 398)
+        Me.Panel1.TabIndex = 8
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label5.Location = New System.Drawing.Point(209, 12)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(78, 29)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Login"
+        '
+        'Panel3
+        '
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.TxtPassword)
+        Me.Panel3.Location = New System.Drawing.Point(100, 201)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(264, 38)
+        Me.Panel3.TabIndex = 7
+        '
+        'Panel2
+        '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.TxtUsername)
+        Me.Panel2.Location = New System.Drawing.Point(100, 103)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(264, 39)
+        Me.Panel2.TabIndex = 6
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label6.Location = New System.Drawing.Point(219, 75)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(364, 25)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "Silakan Login untuk mendapatkan akses"
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(788, 576)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.LinkRegister)
-        Me.Controls.Add(Me.BtnLogin)
-        Me.Controls.Add(Me.TxtPassword)
-        Me.Controls.Add(Me.TxtUsername)
+        Me.Controls.Add(Me.Panel1)
         Me.Name = "Login"
         Me.Text = "Login"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -118,4 +199,10 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

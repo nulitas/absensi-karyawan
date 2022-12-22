@@ -30,6 +30,10 @@
     End Sub
 
     Private Sub LinkRegister_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkRegister.LinkClicked
+        Me.Hide()
         Register.Show()
+
     End Sub
+
+
 End Class

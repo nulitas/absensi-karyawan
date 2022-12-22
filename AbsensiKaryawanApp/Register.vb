@@ -40,4 +40,15 @@
         AbsensiKaryawan.GSAbsensi.GSFoto = FotoShare.ToString()
         AbsensiKaryawan.GSAbsensi.GSFoto = AbsensiKaryawan.GSAbsensi.GSFoto.Replace("\", "/")
     End Sub
+
+    Private Sub LinkLogin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLogin.LinkClicked
+        Login.Show()
+        Me.Close()
+    End Sub
+
+
+
+    Private Sub Register_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Login.Show()
+    End Sub
 End Class
