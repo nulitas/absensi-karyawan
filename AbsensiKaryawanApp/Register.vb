@@ -37,7 +37,7 @@
 
         PictureBox1.Load(FotoShare)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        AbsensiKaryawan.Absensi.GSFoto = FotoShare.ToString()
-        AbsensiKaryawan.Absensi.GSFoto = AbsensiKaryawan.Absensi.GSFoto.Replace("\", "/")
+        AbsensiKaryawan.GSAbsensi.GSFoto = FotoShare.ToString()
+        AbsensiKaryawan.GSAbsensi.GSFoto = AbsensiKaryawan.GSAbsensi.GSFoto.Replace("\", "/")
     End Sub
 End Class

@@ -1,3 +1,5 @@
 ﻿Public Class AbsensiKaryawan
-    Public Shared Absensi = New Absensi
+
+    Public Shared GSAbsensi = New GSAbsensi
+
 End Class

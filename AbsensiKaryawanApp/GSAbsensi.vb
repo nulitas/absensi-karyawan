@@ -1,4 +1,4 @@
-﻿Public Class Absensi
+﻿Public Class GSAbsensi
 
 
 
