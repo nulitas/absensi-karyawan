@@ -22,7 +22,6 @@ Partial Class Register
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtUsername = New System.Windows.Forms.TextBox()
         Me.TxtPassword = New System.Windows.Forms.TextBox()
         Me.BtnRegister = New System.Windows.Forms.Button()
@@ -31,36 +30,29 @@ Partial Class Register
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.BtnTambahGambar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.TxtEmail = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LinkLogin = New System.Windows.Forms.LinkLabel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(465, 121)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(195, 175)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'TxtUsername
         '
         Me.TxtUsername.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.TxtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtUsername.Location = New System.Drawing.Point(7, 9)
+        Me.TxtUsername.Location = New System.Drawing.Point(7, 0)
         Me.TxtUsername.Name = "TxtUsername"
         Me.TxtUsername.Size = New System.Drawing.Size(217, 20)
         Me.TxtUsername.TabIndex = 1
@@ -79,7 +71,7 @@ Partial Class Register
         Me.BtnRegister.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BtnRegister.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnRegister.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnRegister.Location = New System.Drawing.Point(141, 331)
+        Me.BtnRegister.Location = New System.Drawing.Point(246, 318)
         Me.BtnRegister.Name = "BtnRegister"
         Me.BtnRegister.Size = New System.Drawing.Size(264, 46)
         Me.BtnRegister.TabIndex = 3
@@ -102,7 +94,7 @@ Partial Class Register
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(141, 94)
+        Me.Label1.Location = New System.Drawing.Point(112, 93)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(75, 20)
         Me.Label1.TabIndex = 5
@@ -111,7 +103,7 @@ Partial Class Register
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(141, 168)
+        Me.Label2.Location = New System.Drawing.Point(112, 182)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 20)
         Me.Label2.TabIndex = 6
@@ -120,34 +112,22 @@ Partial Class Register
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(141, 251)
+        Me.Label3.Location = New System.Drawing.Point(421, 184)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(145, 20)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Konfirmasi Password"
         '
-        'BtnTambahGambar
-        '
-        Me.BtnTambahGambar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnTambahGambar.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.BtnTambahGambar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.BtnTambahGambar.Location = New System.Drawing.Point(465, 302)
-        Me.BtnTambahGambar.Name = "BtnTambahGambar"
-        Me.BtnTambahGambar.Size = New System.Drawing.Size(195, 39)
-        Me.BtnTambahGambar.TabIndex = 8
-        Me.BtnTambahGambar.Text = "Upload"
-        Me.BtnTambahGambar.UseVisualStyleBackColor = False
-        '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Panel5)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.LinkLogin)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.BtnTambahGambar)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.BtnRegister)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -158,51 +138,32 @@ Partial Class Register
         Me.Panel1.Size = New System.Drawing.Size(752, 467)
         Me.Panel1.TabIndex = 10
         '
-        'Label5
+        'Label7
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(166, 385)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(153, 20)
-        Me.Label5.TabIndex = 12
-        Me.Label5.Text = "Sudah memiliki akun?"
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(421, 94)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(46, 20)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Email"
         '
-        'LinkLogin
+        'Panel5
         '
-        Me.LinkLogin.AutoSize = True
-        Me.LinkLogin.Location = New System.Drawing.Point(315, 385)
-        Me.LinkLogin.Name = "LinkLogin"
-        Me.LinkLogin.Size = New System.Drawing.Size(54, 20)
-        Me.LinkLogin.TabIndex = 11
-        Me.LinkLogin.TabStop = True
-        Me.LinkLogin.Text = "Sign In"
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.TxtEmail)
+        Me.Panel5.Location = New System.Drawing.Point(421, 124)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(264, 39)
+        Me.Panel5.TabIndex = 14
         '
-        'Panel2
+        'TxtEmail
         '
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.TxtUsername)
-        Me.Panel2.Location = New System.Drawing.Point(141, 121)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(264, 39)
-        Me.Panel2.TabIndex = 13
-        '
-        'Panel3
-        '
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.TxtPassword)
-        Me.Panel3.Location = New System.Drawing.Point(141, 198)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(264, 39)
-        Me.Panel3.TabIndex = 14
-        '
-        'Panel4
-        '
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.TxtConfirmPassword)
-        Me.Panel4.Location = New System.Drawing.Point(141, 280)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(264, 39)
-        Me.Panel4.TabIndex = 15
+        Me.TxtEmail.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.TxtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtEmail.Location = New System.Drawing.Point(7, 1)
+        Me.TxtEmail.Name = "TxtEmail"
+        Me.TxtEmail.Size = New System.Drawing.Size(217, 20)
+        Me.TxtEmail.TabIndex = 1
         '
         'Label6
         '
@@ -213,6 +174,52 @@ Partial Class Register
         Me.Label6.Size = New System.Drawing.Size(106, 29)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Sign Up"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(271, 372)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(153, 20)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Sudah memiliki akun?"
+        '
+        'LinkLogin
+        '
+        Me.LinkLogin.AutoSize = True
+        Me.LinkLogin.Location = New System.Drawing.Point(420, 372)
+        Me.LinkLogin.Name = "LinkLogin"
+        Me.LinkLogin.Size = New System.Drawing.Size(54, 20)
+        Me.LinkLogin.TabIndex = 11
+        Me.LinkLogin.TabStop = True
+        Me.LinkLogin.Text = "Sign In"
+        '
+        'Panel2
+        '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.TxtUsername)
+        Me.Panel2.Location = New System.Drawing.Point(112, 123)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(264, 39)
+        Me.Panel2.TabIndex = 13
+        '
+        'Panel3
+        '
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.TxtPassword)
+        Me.Panel3.Location = New System.Drawing.Point(112, 212)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(264, 39)
+        Me.Panel3.TabIndex = 14
+        '
+        'Panel4
+        '
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.TxtConfirmPassword)
+        Me.Panel4.Location = New System.Drawing.Point(421, 212)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(264, 39)
+        Me.Panel4.TabIndex = 15
         '
         'Label4
         '
@@ -233,9 +240,10 @@ Partial Class Register
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Register"
         Me.Text = "Register"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -246,8 +254,6 @@ Partial Class Register
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TxtUsername As TextBox
     Friend WithEvents TxtPassword As TextBox
     Friend WithEvents BtnRegister As Button
@@ -256,7 +262,6 @@ Partial Class Register
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents BtnTambahGambar As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents LinkLogin As LinkLabel
@@ -265,4 +270,7 @@ Partial Class Register
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents TxtEmail As TextBox
 End Class

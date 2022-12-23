@@ -84,17 +84,17 @@ Public Class Users
     End Function
 
 
-    Public Function AddUsersDatabase(username_reg As String, password_reg As String, foto As String)
+    Public Function AddUsersDatabase(username_reg As String, password_reg As String, email As String)
         Try
 
             dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
             dbConn.Open()
 
             sqlCommand.Connection = dbConn
-            sqlQuery = "INSERT INTO users(username, password, foto) VALUE('" _
+            sqlQuery = "INSERT INTO users(username, password, email) VALUE('" _
                 & username_reg & "', '" _
                 & EncryptMD5(password_reg) & "', '" _
-                & foto & "')"
+                & email & "')"
 
 
 
