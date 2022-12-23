@@ -17,7 +17,7 @@
     Private Sub BtnRegister_Click(sender As Object, e As EventArgs) Handles BtnRegister.Click
         If TxtUsername.Text.Length > 0 And TxtPassword.Text.Length > 0 Then
             If String.Compare(TxtPassword.Text, TxtConfirmPassword.Text) = 0 Then
-                Login.Users.AddUsersDatabase(TxtUsername.Text, TxtPassword.Text, FotoShare)
+                Login.Users.AddUsersDatabase(TxtUsername.Text, TxtPassword.Text, TxtEmail.Text)
                 Me.Close()
             Else
                 MessageBox.Show("Error!")
@@ -28,18 +28,18 @@
         End If
     End Sub
 
-    Private Sub BtnTambahGambar_Click(sender As Object, e As EventArgs) Handles BtnTambahGambar.Click
-        OpenFileDialog1.Title = "Upload Foto"
-        OpenFileDialog1.Filter = "All Format|*.*"
-        OpenFileDialog1.ShowDialog()
+    'Private Sub BtnTambahGambar_Click(sender As Object, e As EventArgs)
+    '    OpenFileDialog1.Title = "Upload Foto"
+    '    OpenFileDialog1.Filter = "All Format|*.*"
+    '    OpenFileDialog1.ShowDialog()
 
-        FotoShare = OpenFileDialog1.FileName
+    '    FotoShare = OpenFileDialog1.FileName
 
-        PictureBox1.Load(FotoShare)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        AbsensiKaryawan.GSAbsensi.GSFoto = FotoShare.ToString()
-        AbsensiKaryawan.GSAbsensi.GSFoto = AbsensiKaryawan.GSAbsensi.GSFoto.Replace("\", "/")
-    End Sub
+    '    PictureBox1.Load(FotoShare)
+    '    PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+    '    AbsensiKaryawan.GSAbsensi.GSFoto = FotoShare.ToString()
+    '    AbsensiKaryawan.GSAbsensi.GSFoto = AbsensiKaryawan.GSAbsensi.GSFoto.Replace("\", "/")
+    'End Sub
 
     Private Sub LinkLogin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLogin.LinkClicked
         Login.Show()
