@@ -25,8 +25,8 @@ Partial Class Karyawan
         Me.BtnHapusKaryawan = New System.Windows.Forms.Button()
         Me.DataGridViewKaryawan = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BtnEditKaryawan = New System.Windows.Forms.Button()
         Me.BtnTambahKaryawan = New System.Windows.Forms.Button()
+        Me.BtnEditKaryawan = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DataGridViewKaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -53,7 +53,7 @@ Partial Class Karyawan
         Me.DataGridViewKaryawan.Name = "DataGridViewKaryawan"
         Me.DataGridViewKaryawan.RowHeadersWidth = 51
         Me.DataGridViewKaryawan.RowTemplate.Height = 29
-        Me.DataGridViewKaryawan.Size = New System.Drawing.Size(541, 370)
+        Me.DataGridViewKaryawan.Size = New System.Drawing.Size(584, 370)
         Me.DataGridViewKaryawan.TabIndex = 2
         '
         'GroupBox1
@@ -69,18 +69,6 @@ Partial Class Karyawan
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menu"
         '
-        'BtnEditKaryawan
-        '
-        Me.BtnEditKaryawan.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnEditKaryawan.Font = New System.Drawing.Font("Myanmar Text", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.BtnEditKaryawan.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.BtnEditKaryawan.Location = New System.Drawing.Point(24, 132)
-        Me.BtnEditKaryawan.Name = "BtnEditKaryawan"
-        Me.BtnEditKaryawan.Size = New System.Drawing.Size(169, 50)
-        Me.BtnEditKaryawan.TabIndex = 2
-        Me.BtnEditKaryawan.Text = "Edit"
-        Me.BtnEditKaryawan.UseVisualStyleBackColor = False
-        '
         'BtnTambahKaryawan
         '
         Me.BtnTambahKaryawan.BackColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -92,6 +80,18 @@ Partial Class Karyawan
         Me.BtnTambahKaryawan.TabIndex = 3
         Me.BtnTambahKaryawan.Text = "Tambah"
         Me.BtnTambahKaryawan.UseVisualStyleBackColor = False
+        '
+        'BtnEditKaryawan
+        '
+        Me.BtnEditKaryawan.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnEditKaryawan.Font = New System.Drawing.Font("Myanmar Text", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BtnEditKaryawan.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.BtnEditKaryawan.Location = New System.Drawing.Point(24, 132)
+        Me.BtnEditKaryawan.Name = "BtnEditKaryawan"
+        Me.BtnEditKaryawan.Size = New System.Drawing.Size(169, 50)
+        Me.BtnEditKaryawan.TabIndex = 2
+        Me.BtnEditKaryawan.Text = "Edit"
+        Me.BtnEditKaryawan.UseVisualStyleBackColor = False
         '
         'Label1
         '
