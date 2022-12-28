@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Google.Protobuf.WellKnownTypes
+Imports MySql.Data.MySqlClient
 Public Class AbsensiClass
 
     Private absensiDataTable As New ArrayList()
@@ -32,6 +33,21 @@ Public Class AbsensiClass
         sqlRead.Close()
         dbConn.Close()
         Return result
+    End Function
+
+    Public Function addDataAbsen(id_karyawan As Integer,
+                                 tanngal As Date,
+                                 waktu_absen_masuk As Timestamp,
+                                 waktu_absen_keluar As Timestamp)
+        dbConn.ConnectionString = "server =" + server + "; user id =" + username _
+                                  + "; password =" + password + "; database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "INSERT INTO "
+        Catch ex As Exception
+
+        End Try
     End Function
 
 End Class

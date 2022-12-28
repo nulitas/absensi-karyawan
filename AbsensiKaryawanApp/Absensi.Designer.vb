@@ -27,7 +27,6 @@ Partial Class Absensi
         Me.BtnHapusAbsensi = New System.Windows.Forms.Button()
         Me.BtnEditAbsensi = New System.Windows.Forms.Button()
         Me.BtnAbsenMasuk = New System.Windows.Forms.Button()
-        Me.BtnAbsenKeluar = New System.Windows.Forms.Button()
         Me.BtnKembali = New System.Windows.Forms.Button()
         CType(Me.DataGridViewAbsensi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,31 +82,19 @@ Partial Class Absensi
         '
         'BtnAbsenMasuk
         '
+        Me.BtnAbsenMasuk.BackColor = System.Drawing.SystemColors.Highlight
         Me.BtnAbsenMasuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAbsenMasuk.Font = New System.Drawing.Font("Myanmar Text", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.BtnAbsenMasuk.ForeColor = System.Drawing.Color.Black
+        Me.BtnAbsenMasuk.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.BtnAbsenMasuk.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.BtnAbsenMasuk.Location = New System.Drawing.Point(290, 340)
         Me.BtnAbsenMasuk.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnAbsenMasuk.Name = "BtnAbsenMasuk"
         Me.BtnAbsenMasuk.Size = New System.Drawing.Size(287, 33)
         Me.BtnAbsenMasuk.TabIndex = 8
-        Me.BtnAbsenMasuk.Text = "Absen Masuk"
+        Me.BtnAbsenMasuk.Text = "Absen"
         Me.BtnAbsenMasuk.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAbsenMasuk.UseVisualStyleBackColor = True
-        '
-        'BtnAbsenKeluar
-        '
-        Me.BtnAbsenKeluar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAbsenKeluar.Font = New System.Drawing.Font("Myanmar Text", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.BtnAbsenKeluar.ForeColor = System.Drawing.Color.Black
-        Me.BtnAbsenKeluar.Location = New System.Drawing.Point(290, 386)
-        Me.BtnAbsenKeluar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BtnAbsenKeluar.Name = "BtnAbsenKeluar"
-        Me.BtnAbsenKeluar.Size = New System.Drawing.Size(287, 34)
-        Me.BtnAbsenKeluar.TabIndex = 9
-        Me.BtnAbsenKeluar.Text = "Absen Keluar"
-        Me.BtnAbsenKeluar.UseVisualStyleBackColor = True
+        Me.BtnAbsenMasuk.UseVisualStyleBackColor = False
         '
         'BtnKembali
         '
@@ -129,7 +116,6 @@ Partial Class Absensi
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(589, 454)
         Me.Controls.Add(Me.BtnKembali)
-        Me.Controls.Add(Me.BtnAbsenKeluar)
         Me.Controls.Add(Me.BtnAbsenMasuk)
         Me.Controls.Add(Me.BtnEditAbsensi)
         Me.Controls.Add(Me.BtnHapusAbsensi)
@@ -148,6 +134,5 @@ Partial Class Absensi
     Friend WithEvents BtnHapusAbsensi As Button
     Friend WithEvents BtnEditAbsensi As Button
     Friend WithEvents BtnAbsenMasuk As Button
-    Friend WithEvents BtnAbsenKeluar As Button
     Friend WithEvents BtnKembali As Button
 End Class

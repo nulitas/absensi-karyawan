@@ -23,13 +23,7 @@
     End Sub
 
     Private Sub BtnAbsenMasuk_Click(sender As Object, e As EventArgs) Handles BtnAbsenMasuk.Click
-        AbsensiMasuk.Show()
-        Me.Hide()
-
-    End Sub
-
-    Private Sub BtnAbsenKeluar_Click(sender As Object, e As EventArgs) Handles BtnAbsenKeluar.Click
-        AbsensiKeluar.Show()
+        FormAbsensi.Show()
         Me.Hide()
 
     End Sub
