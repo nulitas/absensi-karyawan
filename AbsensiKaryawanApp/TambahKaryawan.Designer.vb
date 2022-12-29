@@ -22,30 +22,34 @@ Partial Class TambahKaryawan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TxtNik = New System.Windows.Forms.TextBox()
+        Me.TxtNama = New System.Windows.Forms.TextBox()
         Me.BtnTambahKaryawan = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TxtAlamat = New System.Windows.Forms.TextBox()
         Me.CBJabatan = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.BtnUploadFoto = New System.Windows.Forms.Button()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'TxtNik
         '
-        Me.TextBox1.Location = New System.Drawing.Point(232, 173)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(165, 27)
-        Me.TextBox1.TabIndex = 0
+        Me.TxtNik.Location = New System.Drawing.Point(248, 169)
+        Me.TxtNik.Name = "TxtNik"
+        Me.TxtNik.Size = New System.Drawing.Size(165, 27)
+        Me.TxtNik.TabIndex = 0
         '
-        'TextBox2
+        'TxtNama
         '
-        Me.TextBox2.Location = New System.Drawing.Point(232, 266)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(165, 27)
-        Me.TextBox2.TabIndex = 1
+        Me.TxtNama.Location = New System.Drawing.Point(248, 262)
+        Me.TxtNama.Name = "TxtNama"
+        Me.TxtNama.Size = New System.Drawing.Size(165, 27)
+        Me.TxtNama.TabIndex = 1
         '
         'BtnTambahKaryawan
         '
@@ -59,7 +63,7 @@ Partial Class TambahKaryawan
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(232, 140)
+        Me.Label1.Location = New System.Drawing.Point(248, 136)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 20)
         Me.Label1.TabIndex = 3
@@ -68,7 +72,7 @@ Partial Class TambahKaryawan
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(232, 234)
+        Me.Label2.Location = New System.Drawing.Point(248, 230)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 20)
         Me.Label2.TabIndex = 4
@@ -77,23 +81,23 @@ Partial Class TambahKaryawan
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(477, 140)
+        Me.Label3.Location = New System.Drawing.Point(493, 136)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 20)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Alamat"
         '
-        'TextBox3
+        'TxtAlamat
         '
-        Me.TextBox3.Location = New System.Drawing.Point(477, 173)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(125, 27)
-        Me.TextBox3.TabIndex = 6
+        Me.TxtAlamat.Location = New System.Drawing.Point(493, 169)
+        Me.TxtAlamat.Name = "TxtAlamat"
+        Me.TxtAlamat.Size = New System.Drawing.Size(125, 27)
+        Me.TxtAlamat.TabIndex = 6
         '
         'CBJabatan
         '
         Me.CBJabatan.FormattingEnabled = True
-        Me.CBJabatan.Location = New System.Drawing.Point(477, 265)
+        Me.CBJabatan.Location = New System.Drawing.Point(493, 261)
         Me.CBJabatan.Name = "CBJabatan"
         Me.CBJabatan.Size = New System.Drawing.Size(125, 28)
         Me.CBJabatan.TabIndex = 7
@@ -101,40 +105,68 @@ Partial Class TambahKaryawan
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(477, 234)
+        Me.Label4.Location = New System.Drawing.Point(493, 230)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 20)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Jabatan"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Location = New System.Drawing.Point(55, 71)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(148, 203)
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'BtnUploadFoto
+        '
+        Me.BtnUploadFoto.Location = New System.Drawing.Point(55, 290)
+        Me.BtnUploadFoto.Name = "BtnUploadFoto"
+        Me.BtnUploadFoto.Size = New System.Drawing.Size(148, 29)
+        Me.BtnUploadFoto.TabIndex = 10
+        Me.BtnUploadFoto.Text = "Upload Foto"
+        Me.BtnUploadFoto.UseVisualStyleBackColor = True
         '
         'TambahKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.BtnUploadFoto)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CBJabatan)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TxtAlamat)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnTambahKaryawan)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TxtNama)
+        Me.Controls.Add(Me.TxtNik)
         Me.Name = "TambahKaryawan"
         Me.Text = "TambahKaryawan"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TxtNik As TextBox
+    Friend WithEvents TxtNama As TextBox
     Friend WithEvents BtnTambahKaryawan As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TxtAlamat As TextBox
     Friend WithEvents CBJabatan As ComboBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents BtnUploadFoto As Button
 End Class
