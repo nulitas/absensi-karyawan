@@ -37,20 +37,27 @@ Public Class AbsensiClass
 
     Sub addDataAbsen(id_karyawan As String,
                      tanngal As Date,
-                     waktu_absen_masuk As DateTime,
-                     waktu_absen_keluar As DateTime)
-        dbConn.ConnectionString = "server =" + server + "; user id =" + username _
-                                  + "; password =" + password + "; database =" + database
+                     waktu_absen_masuk As String,
+                     waktu_absen_keluar As String)
         Try
+            dbConn.ConnectionString = "server =" + server + "; user id =" + username _
+                                      + "; password =" + password + "; database =" + database
+
             dbConn.Open()
             sqlCommand.Connection = dbConn
+            Dim stringTanggal = tanngal.Year & "-" & tanngal.Month & "-" & tanngal.Day
+
+
             sqlQuery = "INSERT INTO absensi(id_karyawan, tanggal, waktu_absen_masuk, waktu_absen_keluar) 
                         VALUE(' " &
                         id_karyawan & "', '" &
-                        tanngal & "', '" & waktu_absen_masuk & "', '" &
-                        waktu_absen_keluar & "')"
+                        stringTanggal & "', " &
+                        waktu_absen_masuk & ", " &
+                        waktu_absen_keluar & ")"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+
+            'MsgBox(sqlQuery)
             sqlRead = sqlCommand.ExecuteReader
             dbConn.Close()
 

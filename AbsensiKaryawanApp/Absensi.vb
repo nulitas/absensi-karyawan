@@ -27,4 +27,14 @@
         Me.Hide()
 
     End Sub
+
+    Private Sub Absensi_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        ReloadDataTable()
+    End Sub
+
+    Private Sub BtnEditAbsensi_Click(sender As Object, e As EventArgs) Handles BtnEditAbsensi.Click
+        StatusAbsensi.Show()
+        Me.Hide()
+
+    End Sub
 End Class
