@@ -96,7 +96,7 @@ Public Class AbsensiClass
         End Try
     End Function
 
-    Public Function getDataAbsensiByID(Id As Integer) As List(Of String)
+    Public Function GetDataAbsensiByID(Id As Integer) As List(Of String)
         Dim result As New List(Of String)
 
         dbConn.ConnectionString = "server =" + server + "; user id =" + username _
@@ -137,42 +137,41 @@ Public Class AbsensiClass
 
     End Function
 
-    Sub addDataAbsen(id_karyawan As String,
+    Sub AddDataAbsen(id_karyawan As String,
                      tanngal As Date,
                      waktu_absen_masuk As String,
                      waktu_absen_keluar As String)
         dbConn.ConnectionString = "server =" + server + ";user id =" + username _
                                       + ";password =" + password + ";database =" + database
-        Try
-
-            dbConn.Open()
-            sqlCommand.Connection = dbConn
-            Dim stringTanggal = tanngal.Year & "-" & tanngal.Month & "-" & tanngal.Day
+        dbConn.Open()
+        sqlCommand.Connection = dbConn
+        Dim stringTanggal = tanngal.Year & "-" & tanngal.Month & "-" & tanngal.Day
 
 
-            sqlQuery = "INSERT INTO absensi(id_karyawan, tanggal, waktu_absen_masuk, waktu_absen_keluar) 
+        sqlQuery = "INSERT INTO absensi(id_karyawan, tanggal, waktu_absen_masuk, waktu_absen_keluar) 
                         VALUE(' " &
                         id_karyawan & "', '" &
                         stringTanggal & "', " &
                         waktu_absen_masuk & ", " &
                         waktu_absen_keluar & ")"
 
-            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+        sqlCommand = New MySqlCommand(sqlQuery, dbConn)
 
-            'MsgBox(sqlQuery)
-            sqlRead = sqlCommand.ExecuteReader
-            dbConn.Close()
+        'MsgBox(sqlQuery)
+        sqlRead = sqlCommand.ExecuteReader
+        sqlRead.Close()
+        dbConn.Close()
+        'Try
 
-            sqlRead.Close()
 
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            dbConn.Dispose()
-        End Try
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'Finally
+        '    dbConn.Dispose()
+        'End Try
     End Sub
 
-    Sub updateDataAbsensi(id_karyawan As Integer,
+    Sub UpdateDataAbsensi(id_karyawan As Integer,
                           tanggal As Date,
                           absen_masuk As String,
                           absen_keluar As String)
@@ -200,58 +199,89 @@ Public Class AbsensiClass
             sqlRead.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            dbConn.Dispose()
         End Try
     End Sub
 
-    Public Function checkEmployee(id_karyawan As Integer, nama As String) As Boolean
+    Sub DeleteDataAbsensi(id_absensi As Integer)
         dbConn.ConnectionString = "server =" + server + ";user id =" + username _
-                                 + ";password =" + password + ";database =" + database
+                                + ";password =" + password + ";database =" + database
         Try
-
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlCommand.CommandText = "SELECT nik FROM karyawan WHERE nama='" & nama &
-                                     "' AND id_karyawan=" & id_karyawan
+
+            sqlQuery = "DELETE FROM absensi WHERE id_absensi=" & id_absensi
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
 
-            If Not sqlRead.HasRows Then
-                MsgBox("ID Karyawan dengan nama tidak sesuai!")
-                Return False
-            End If
+            dbConn.Close()
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbConn.Dispose()
 
+        End Try
+    End Sub
+
+    Public Function CheckEmployee(id_karyawan As Integer, nama As String) As Boolean
+        dbConn.ConnectionString = "server =" + server + ";user id =" + username _
+                                 + ";password =" + password + ";database =" + database
+        dbConn.Open()
+        sqlCommand.Connection = dbConn
+        sqlCommand.CommandText = "SELECT nik FROM karyawan WHERE nama='" & nama &
+                                     "' AND id_karyawan=" & id_karyawan
+        sqlRead = sqlCommand.ExecuteReader
+
+        If Not sqlRead.HasRows Then
+            MsgBox("ID Karyawan dengan nama tidak sesuai!")
+            Return False
+        End If
+
+        sqlRead.Close()
+        dbConn.Close()
+
+        Return True
+        'Try
+
+
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        '    Return False
+        'Finally
+        '    dbConn.Dispose()
+        'End Try
+
+    End Function
+
+    Public Function GetEmployeesNameList() As List(Of String)
+        Try
+            Dim result As New List(Of String)
+            dbConn.ConnectionString = "server =" + server + "; user id =" + username _
+                                 + "; password =" + password + "; database =" + database
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlCommand.CommandText = "SELECT nama FROM karyawan"
+
+            sqlRead = sqlCommand.ExecuteReader()
+            Do While sqlRead.Read
+                result.Add(sqlRead.Item(0))
+            Loop
             sqlRead.Close()
             dbConn.Close()
-
-            Return True
+            Return result
 
         Catch ex As Exception
             MsgBox(ex.Message)
-            Return False
         Finally
             dbConn.Dispose()
         End Try
 
     End Function
 
-    Public Function getEmployeesName() As List(Of String)
-        Dim result As New List(Of String)
-        dbConn.ConnectionString = "server =" + server + "; user id =" + username _
-                                 + "; password =" + password + "; database =" + database
-        dbConn.Open()
-        sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT nama FROM karyawan"
-
-        sqlRead = sqlCommand.ExecuteReader()
-        Do While sqlRead.Read
-            result.Add(sqlRead.Item(0))
-        Loop
-        sqlRead.Close()
-        dbConn.Close()
-        Return result
-
-    End Function
-
-    Public Function getEmployeeNameByID(id As Integer) As String
+    Public Function GetEmployeeNameByID(id As Integer) As String
         Dim result As String
         dbConn.ConnectionString = "server =" + server + "; user id =" + username _
                                  + "; password =" + password + "; database =" + database
@@ -276,19 +306,16 @@ Public Class AbsensiClass
         End Try
     End Function
 
-    Function getEmployyeIDByName(nama As String) As Integer
+    Function GetEmployyeIDByName(nama As String) As Integer
         Dim id As Integer
         dbConn.ConnectionString = "server =" + server + ";user id =" + username _
                                     + ";password =" + password + ";database =" + database
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-
             sqlQuery = "SELECT id_karyawan FROM karyawan WHERE nama='" & nama & "';"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
-
-            'MsgBox(sqlQuery)
             sqlRead = sqlCommand.ExecuteReader
 
             sqlRead.Read()
@@ -306,6 +333,5 @@ Public Class AbsensiClass
 
         End Try
     End Function
-
 
 End Class

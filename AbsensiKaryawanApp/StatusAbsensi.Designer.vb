@@ -23,6 +23,8 @@ Partial Class StatusAbsensi
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LblIdAbsensi = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.DPWaktu = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DPTanggal = New System.Windows.Forms.DateTimePicker()
@@ -34,8 +36,6 @@ Partial Class StatusAbsensi
         Me.CBNamaPegawai = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.LblIdAbsensi = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -57,6 +57,24 @@ Partial Class StatusAbsensi
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(402, 347)
         Me.Panel1.TabIndex = 5
+        '
+        'LblIdAbsensi
+        '
+        Me.LblIdAbsensi.AutoSize = True
+        Me.LblIdAbsensi.Location = New System.Drawing.Point(222, 36)
+        Me.LblIdAbsensi.Name = "LblIdAbsensi"
+        Me.LblIdAbsensi.Size = New System.Drawing.Size(14, 15)
+        Me.LblIdAbsensi.TabIndex = 16
+        Me.LblIdAbsensi.Text = "#"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(149, 36)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(62, 15)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "ID Absensi"
         '
         'DPWaktu
         '
@@ -170,24 +188,6 @@ Partial Class StatusAbsensi
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "# Edit Absensi"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(29, 12)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(62, 15)
-        Me.Label5.TabIndex = 15
-        Me.Label5.Text = "ID Absensi"
-        '
-        'LblIdAbsensi
-        '
-        Me.LblIdAbsensi.AutoSize = True
-        Me.LblIdAbsensi.Location = New System.Drawing.Point(102, 12)
-        Me.LblIdAbsensi.Name = "LblIdAbsensi"
-        Me.LblIdAbsensi.Size = New System.Drawing.Size(14, 15)
-        Me.LblIdAbsensi.TabIndex = 16
-        Me.LblIdAbsensi.Text = "#"
         '
         'StatusAbsensi
         '

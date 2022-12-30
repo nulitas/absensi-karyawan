@@ -17,21 +17,22 @@
         Dim selectedEmployee = CBNamaPegawai.SelectedValue
         Dim employeeId = Integer.Parse(TxtIdPegawai.Text)
 
-        Dim stringMasuk = "'" & waktu_masuk.Year & "-" & waktu_masuk.Month & "-" &
+        Dim stringMasuk As String = "NULL"
+        Dim stringKeluar As String = "NULL"
+
+        If Absensi.absensi.CheckEmployee(employeeId, selectedEmployee) Then
+            If RdnAbsenMasuk.Checked Then
+                'stringKeluar = "NULL"
+                stringMasuk = "'" & waktu_masuk.Year & "-" & waktu_masuk.Month & "-" &
                           waktu_masuk.Day & " " & waktu_masuk.Hour & ":" &
                           waktu_masuk.Minute & ":" & waktu_masuk.Second & "'"
-
-        Dim stringKeluar = "'" & waktu_keluar.Year & "-" & waktu_keluar.Month & "-" &
+            ElseIf RdnAbsenKeluar.Checked Then
+                'stringMasuk = "NULL"
+                stringKeluar = "'" & waktu_keluar.Year & "-" & waktu_keluar.Month & "-" &
                            waktu_keluar.Day & " " & waktu_keluar.Hour & ":" &
                            waktu_keluar.Minute & ":" & waktu_keluar.Second & "'"
-
-        If Absensi.absensi.checkEmployee(employeeId, selectedEmployee) Then
-            If RdnAbsenMasuk.Checked Then
-                stringKeluar = "NULL"
-            ElseIf RdnAbsenKeluar.Checked Then
-                stringMasuk = "NULL"
             End If
-            Absensi.absensi.addDataAbsen(employeeId, Date.Today, stringMasuk, stringKeluar)
+            Absensi.absensi.AddDataAbsen(employeeId, Date.Today, stringMasuk, stringKeluar)
             Me.Close()
             Absensi.Show()
         End If
@@ -43,7 +44,7 @@
     End Sub
 
     Private Sub FormAbsensi_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        CBNamaPegawai.DataSource = Absensi.absensi.getEmployeesName()
+        CBNamaPegawai.DataSource = Absensi.absensi.GetEmployeesNameList()
         waktu_masuk = DateAndTime.Now
         waktu_keluar = DateAndTime.Now
     End Sub

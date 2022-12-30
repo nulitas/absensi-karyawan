@@ -10,7 +10,7 @@
         emp_id = Absensi.absensi.GSid_karyawan
 
         LblIdAbsensi.Text = Absensi.absensi.GSid_absensi
-        CBNamaPegawai.SelectedItem = Absensi.absensi.getEmployeeNameByID(emp_id)
+        CBNamaPegawai.SelectedItem = Absensi.absensi.GetEmployeeNameByID(emp_id)
         DPTanggal.Format = DateTimePickerFormat.Custom
         DPTanggal.CustomFormat = "yyyy/MM/dd"
         DPTanggal.Value = Absensi.absensi.GStanggal
@@ -34,12 +34,12 @@
     End Sub
 
     Private Sub StatusAbsensi_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        CBNamaPegawai.DataSource = Absensi.absensi.getEmployeesName
-        CBNamaPegawai.SelectedItem = Absensi.absensi.getEmployeeNameByID(emp_id)
+        CBNamaPegawai.DataSource = Absensi.absensi.GetEmployeesNameList
+        CBNamaPegawai.SelectedItem = Absensi.absensi.GetEmployeeNameByID(emp_id)
     End Sub
 
     Private Sub BtnAbsen_Click(sender As Object, e As EventArgs) Handles BtnAbsen.Click
-        Dim idEmployee = Absensi.absensi.getEmployyeIDByName(CBNamaPegawai.SelectedValue)
+        Dim idEmployee = Absensi.absensi.GetEmployyeIDByName(CBNamaPegawai.SelectedValue)
 
 
         Dim stringMasuk = "'" & DPTanggal.Value.Year & "-" & DPTanggal.Value.Month & "-" &
@@ -55,7 +55,7 @@
         ElseIf RdnAbsenKeluar.Checked Then
             stringMasuk = "NULL"
         End If
-        Absensi.absensi.updateDataAbsensi(idEmployee, DPTanggal.Value, stringMasuk, stringKeluar)
+        Absensi.absensi.UpdateDataAbsensi(idEmployee, DPTanggal.Value, stringMasuk, stringKeluar)
         Me.Close()
         Absensi.Show()
     End Sub
