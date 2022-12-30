@@ -5,7 +5,7 @@
     Public Shared selectedTableKaryawanNama
 
     Private Sub ReloadDataTableDatabase()
-        DataGridViewKaryawan.DataSource = karyawan.GetDataKaryawanDatabase()
+        DataGridViewKaryawan.DataSource = AbsensiKaryawan.karyawan.GetDataKaryawanDatabase()
     End Sub
 
 
@@ -24,7 +24,7 @@
         selectedRow = DataGridViewKaryawan.Rows(index)
 
         selectedTableKaryawan = selectedRow.Cells(0).Value
-        selectedTableKaryawanNama = selectedRow.Cells(1).Value
+        selectedTableKaryawanNama = selectedRow.Cells(2).Value
 
     End Sub
 
@@ -33,6 +33,16 @@
     End Sub
 
     Private Sub BtnEditKaryawan_Click(sender As Object, e As EventArgs) Handles BtnEditKaryawan.Click
+
+
+        Dim selectedKaryawan As List(Of String) = karyawan.GetDataKaryawanByIDDatabase(selectedTableKaryawan)
+
+
+        karyawan.GSNik = selectedKaryawan(1)
+        karyawan.GSNama = selectedKaryawan(2)
+        karyawan.GSAlamat = selectedKaryawan(3)
+        karyawan.GSJabatan = selectedKaryawan(4)
+
         UbahKaryawan.Show()
     End Sub
 End Class

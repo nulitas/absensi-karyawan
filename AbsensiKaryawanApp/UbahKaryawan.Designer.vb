@@ -24,15 +24,16 @@ Partial Class UbahKaryawan
     Private Sub InitializeComponent()
         Me.BtnUploadFoto = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.LblJabatan = New System.Windows.Forms.Label()
         Me.CBJabatan = New System.Windows.Forms.ComboBox()
         Me.TxtAlamat = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LblAlamat = New System.Windows.Forms.Label()
+        Me.LblNama = New System.Windows.Forms.Label()
+        Me.LblNik = New System.Windows.Forms.Label()
         Me.BtnUbahKaryawan = New System.Windows.Forms.Button()
         Me.TxtNama = New System.Windows.Forms.TextBox()
         Me.TxtNik = New System.Windows.Forms.TextBox()
+        Me.TxtJabatan = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,14 +55,14 @@ Partial Class UbahKaryawan
         Me.PictureBox1.TabIndex = 20
         Me.PictureBox1.TabStop = False
         '
-        'Label4
+        'LblJabatan
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(508, 221)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(60, 20)
-        Me.Label4.TabIndex = 19
-        Me.Label4.Text = "Jabatan"
+        Me.LblJabatan.AutoSize = True
+        Me.LblJabatan.Location = New System.Drawing.Point(508, 221)
+        Me.LblJabatan.Name = "LblJabatan"
+        Me.LblJabatan.Size = New System.Drawing.Size(60, 20)
+        Me.LblJabatan.TabIndex = 19
+        Me.LblJabatan.Text = "Jabatan"
         '
         'CBJabatan
         '
@@ -78,32 +79,32 @@ Partial Class UbahKaryawan
         Me.TxtAlamat.Size = New System.Drawing.Size(125, 27)
         Me.TxtAlamat.TabIndex = 17
         '
-        'Label3
+        'LblAlamat
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(508, 127)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(57, 20)
-        Me.Label3.TabIndex = 16
-        Me.Label3.Text = "Alamat"
+        Me.LblAlamat.AutoSize = True
+        Me.LblAlamat.Location = New System.Drawing.Point(508, 127)
+        Me.LblAlamat.Name = "LblAlamat"
+        Me.LblAlamat.Size = New System.Drawing.Size(57, 20)
+        Me.LblAlamat.TabIndex = 16
+        Me.LblAlamat.Text = "Alamat"
         '
-        'Label2
+        'LblNama
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(263, 221)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 20)
-        Me.Label2.TabIndex = 15
-        Me.Label2.Text = "Nama"
+        Me.LblNama.AutoSize = True
+        Me.LblNama.Location = New System.Drawing.Point(263, 221)
+        Me.LblNama.Name = "LblNama"
+        Me.LblNama.Size = New System.Drawing.Size(49, 20)
+        Me.LblNama.TabIndex = 15
+        Me.LblNama.Text = "Nama"
         '
-        'Label1
+        'LblNik
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(263, 127)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(33, 20)
-        Me.Label1.TabIndex = 14
-        Me.Label1.Text = "NIK"
+        Me.LblNik.AutoSize = True
+        Me.LblNik.Location = New System.Drawing.Point(263, 127)
+        Me.LblNik.Name = "LblNik"
+        Me.LblNik.Size = New System.Drawing.Size(33, 20)
+        Me.LblNik.TabIndex = 14
+        Me.LblNik.Text = "NIK"
         '
         'BtnUbahKaryawan
         '
@@ -128,19 +129,27 @@ Partial Class UbahKaryawan
         Me.TxtNik.Size = New System.Drawing.Size(165, 27)
         Me.TxtNik.TabIndex = 11
         '
+        'TxtJabatan
+        '
+        Me.TxtJabatan.Location = New System.Drawing.Point(508, 305)
+        Me.TxtJabatan.Name = "TxtJabatan"
+        Me.TxtJabatan.Size = New System.Drawing.Size(125, 27)
+        Me.TxtJabatan.TabIndex = 22
+        '
         'UbahKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.TxtJabatan)
         Me.Controls.Add(Me.BtnUploadFoto)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.LblJabatan)
         Me.Controls.Add(Me.CBJabatan)
         Me.Controls.Add(Me.TxtAlamat)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LblAlamat)
+        Me.Controls.Add(Me.LblNama)
+        Me.Controls.Add(Me.LblNik)
         Me.Controls.Add(Me.BtnUbahKaryawan)
         Me.Controls.Add(Me.TxtNama)
         Me.Controls.Add(Me.TxtNik)
@@ -154,13 +163,14 @@ Partial Class UbahKaryawan
 
     Friend WithEvents BtnUploadFoto As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label4 As Label
+    Friend WithEvents LblJabatan As Label
     Friend WithEvents CBJabatan As ComboBox
     Friend WithEvents TxtAlamat As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LblAlamat As Label
+    Friend WithEvents LblNama As Label
+    Friend WithEvents LblNik As Label
     Friend WithEvents BtnUbahKaryawan As Button
     Friend WithEvents TxtNama As TextBox
     Friend WithEvents TxtNik As TextBox
+    Friend WithEvents TxtJabatan As TextBox
 End Class

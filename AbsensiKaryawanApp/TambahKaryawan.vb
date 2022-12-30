@@ -17,16 +17,16 @@ Public Class TambahKaryawan
         'AbsensiKaryawan.GSAbsensi.GSJabatan = CBJabatan.Text
 
 
-        AbsensiKaryawan.karyawan.GSJabatan = CBJabatan.SelectedValue()
-        AbsensiKaryawan.karyawan.GSNama = TxtNama.Text
-        AbsensiKaryawan.karyawan.GSNik = TxtNik.Text
-        AbsensiKaryawan.karyawan.GSAlamat = TxtAlamat.Text
+        Karyawan.karyawan.GSJabatan = CBJabatan.SelectedValue()
+        Karyawan.karyawan.GSNama = TxtNama.Text
+        Karyawan.karyawan.GSNik = TxtNik.Text
+        Karyawan.karyawan.GSAlamat = TxtAlamat.Text
 
 
 
-        AbsensiKaryawan.karyawan.AddDataKaryawanDatabase(AbsensiKaryawan.karyawan.GSNik, AbsensiKaryawan.karyawan.GSNama, AbsensiKaryawan.karyawan.GSAlamat, AbsensiKaryawan.karyawan.GSJabatan)
+        Karyawan.karyawan.AddDataKaryawanDatabase(Karyawan.karyawan.GSNik, Karyawan.karyawan.GSNama, Karyawan.karyawan.GSAlamat, Karyawan.karyawan.GSJabatan)
 
-        'Me.Close()
+        Me.Close()
     End Sub
 
     Private Sub TambahKaryawan_Load(sender As Object, e As EventArgs) Handles Me.Load

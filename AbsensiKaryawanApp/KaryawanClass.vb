@@ -1,13 +1,13 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports Mysqlx.XDevAPI.Common
 
 Public Class KaryawanClass
-
 
     Private foto As String
     Private nik As String
     Private nama As String
     Private alamat As String
-    Private jabatan As Integer
+    Private jabatan As String
     Private db As Database
     Public Sub New()
         db = New Database()
@@ -37,11 +37,11 @@ Public Class KaryawanClass
         End Set
     End Property
 
-    Public Property GSJabatan() As Integer
+    Public Property GSJabatan() As String
         Get
             Return jabatan
         End Get
-        Set(value As Integer)
+        Set(value As String)
             jabatan = value
         End Set
     End Property
@@ -90,6 +90,35 @@ Public Class KaryawanClass
         sqlRead.Close()
         dbConn.Close()
         Return result
+    End Function
+
+    Public Function GetDataKaryawanByIDDatabase(ID As Integer) As List(Of String)
+
+        Dim result As New List(Of String)
+
+        dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
+        dbConn.Open()
+        sqlCommand.Connection = dbConn
+        sqlCommand.CommandText = "SELECT id_karyawan AS 'ID',
+                                  nik as 'NIK',
+                                  nama AS 'Nama Karyawan',
+                                  alamat AS 'Alamat',
+                                  id_jabatan AS 'ID Jabatan'
+                                  FROM karyawan  WHERE id_karyawan='" & ID & "' "
+        sqlRead = sqlCommand.ExecuteReader
+        While sqlRead.Read
+            result.Add(sqlRead.GetString(0).ToString())
+            result.Add(sqlRead.GetString(1).ToString())
+            result.Add(sqlRead.GetString(2).ToString())
+            result.Add(sqlRead.GetString(3).ToString())
+            result.Add(sqlRead.GetString(4).ToString())
+
+        End While
+
+        sqlRead.Close()
+        dbConn.Close()
+        Return result
+
     End Function
 
     Public Function AddDataKaryawanDatabase(nik_karyawan As String, nama_karyawan As String, alamat_karyawan As String, jabatan As String)
@@ -147,7 +176,7 @@ Public Class KaryawanClass
 
     End Function
 
-    Public Function UpdateDataKoleksiByIDDatabase(ID As Integer,
+    Public Function UpdateDataKaryawanByIDDatabase(ID As Integer,
                                   nik_karyawan As String, nama_karyawan As String, alamat_karyawan As String, jabatan As String)
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
@@ -158,7 +187,8 @@ Public Class KaryawanClass
                         "nik = '" & nik_karyawan & "',  " &
                         "nama = '" & nama_karyawan & "',  " &
                         "alamat = '" & alamat_karyawan & "',  " &
-                        "WHERE id_koleksi= '" & ID & "'"
+                         "id_jabatan = '" & jabatan & "',  " &
+                        "WHERE id_karyawan= '" & ID & "'"
             Debug.Print(sqlQuery)
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader

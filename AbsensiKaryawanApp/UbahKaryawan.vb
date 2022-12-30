@@ -1,5 +1,6 @@
 ﻿Public Class UbahKaryawan
 
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -7,12 +8,12 @@
 
         ' Add any initialization after the InitializeComponent() call.
 
+        TxtNama.Text = Karyawan.karyawan.GSNama
+        TxtNik.Text = Karyawan.karyawan.GSNik
+        TxtAlamat.Text = Karyawan.karyawan.GSAlamat
+        CBJabatan.Text = Karyawan.karyawan.GSJabatan
+        'TxtJabatan.Text = Karyawan.karyawan.GSJabatan
 
-
-        TxtNama.Text = AbsensiKaryawan.karyawan.GSNama
-        TxtNik.Text = AbsensiKaryawan.karyawan.GSNik
-        TxtAlamat.Text = AbsensiKaryawan.karyawan.GSAlamat
-        CBJabatan.SelectedValue = AbsensiKaryawan.karyawan.GSJabatan
 
     End Sub
 
@@ -22,7 +23,11 @@
         AbsensiKaryawan.karyawan.GSNik = TxtNik.Text
         AbsensiKaryawan.karyawan.GSAlamat = TxtAlamat.Text
 
-        AbsensiKaryawan.karyawan.UpdateDataKoleksiByIDDatabase(Karyawan.selectedTableKaryawan,  , AbsensiKaryawan.karyawan.GSNik, AbsensiKaryawan.karyawan.GSNama, AbsensiKaryawan.karyawan.GSJabatan)
+
+        AbsensiKaryawan.karyawan.UpdateDataKaryawanByIDDatabase(Karyawan.selectedTableKaryawan, AbsensiKaryawan.karyawan.GSNik, AbsensiKaryawan.karyawan.GSNama, AbsensiKaryawan.karyawan.GSAlamat, AbsensiKaryawan.karyawan.GSJabatan)
+
+        Me.Close()
+
 
     End Sub
 End Class
