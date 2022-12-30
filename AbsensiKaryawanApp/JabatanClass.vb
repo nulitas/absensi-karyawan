@@ -1,5 +1,4 @@
-﻿Imports Microsoft.SqlServer
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+﻿
 Imports MySql.Data.MySqlClient
 
 Public Class JabatanClass
@@ -26,11 +25,11 @@ Public Class JabatanClass
         End Set
     End Property
 
-    Public Property GSGaji() As Integer
+    Public Property GSGaji() As String
         Get
             Return gaji
         End Get
-        Set(value As Integer)
+        Set(value As String)
             gaji = value
         End Set
     End Property
@@ -39,12 +38,36 @@ Public Class JabatanClass
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT gaji as 'Gaji',
-                                  nama AS 'Nama Jabatan',
-                                  FROM Jabatan"
+        sqlCommand.CommandText = "SELECT id_jabatan as 'ID' , 
+                                  gaji_perhari as 'Gaji',
+                                  nama_jabatan as 'Nama Jabatan'
+                                  FROM jabatan"
+
         sqlRead = sqlCommand.ExecuteReader
 
         result.Load(sqlRead)
+        sqlRead.Close()
+        dbConn.Close()
+        Return result
+    End Function
+
+    Public Function GetDataJabatanByIDDatabase(ID As Integer) As List(Of String)
+        Dim result As New List(Of String)
+        dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
+        dbConn.Open()
+        sqlCommand.Connection = dbConn
+        sqlCommand.CommandText = "SELECT id_jabatan as 'ID' , 
+                                  gaji_perhari as 'Gaji',
+                                  nama_jabatan as 'Nama Jabatan'
+                                  FROM jabatan  WHERE id_jabatan='" & ID & "' "
+
+        sqlRead = sqlCommand.ExecuteReader
+        While sqlRead.Read
+            result.Add(sqlRead.GetString(0).ToString())
+            result.Add(sqlRead.GetString(1).ToString())
+            result.Add(sqlRead.GetString(2).ToString())
+        End While
+
         sqlRead.Close()
         dbConn.Close()
         Return result
@@ -55,9 +78,9 @@ Public Class JabatanClass
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "INSERT INTO jabatan (nama, gaji) VALUE('" _
+            sqlQuery = "INSERT INTO jabatan (nama_jabatan, gaji_perhari) VALUE('" _
                         & nama_jabatan & "', '" _
-                        & gaji_jabatan & "', '"
+                        & gaji_jabatan & "')"
 
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
@@ -76,7 +99,7 @@ Public Class JabatanClass
 
 
 
-    Public Function DeleteDataJabatanDatabase(ID As Integer)
+    Public Function DeleteDataJabatanByIDDatabase(ID As Integer)
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
@@ -100,17 +123,21 @@ Public Class JabatanClass
 
     End Function
 
-    Public Function UpdateDataKoleksiByIDDatabase(ID As Integer,
-                                  nama_jabatan As String, gaji_jabatan As String)
+    Public Function UpdateDataJabataniByIDDatabase(id_jabatan As Integer,
+                                 gaji_jabatan As String, nama_jabatan As String)
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "UPDATE karyawan SET " &
-                        "nama = '" & nama_jabatan & "',  " &
-                        "gaji = '" & gaji_jabatan & "',  " &
-                        "WHERE id_koleksi= '" & ID & "'"
+
+
+            sqlQuery = "UPDATE jabatan
+                        SET id_jabatan=" & id_jabatan &
+                        ", nama_jabatan='" & nama_jabatan &
+                        "', gaji_perhari=" & gaji_jabatan & " " &
+                        "WHERE id_jabatan=" & id_jabatan & ";"
+
             Debug.Print(sqlQuery)
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader

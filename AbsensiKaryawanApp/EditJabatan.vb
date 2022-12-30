@@ -13,10 +13,12 @@
     End Sub
 
     Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
-        Jabatan.jabatan.GSNama = TxtNamaJabatan.Text
-        Jabatan.jabatan.GSGaji = TxtGaji.Text
+        Jabatan.jabatan.GSNama = TxtNamaJabatan.Text.ToString()
+        Jabatan.jabatan.GSGaji = TxtGaji.Text.ToString()
 
-        Jabatan.jabatan.UpdateDataKoleksiByIDDatabase(Jabatan.selectedTableJabatan,  , Jabatan.jabatan.GSNama, Jabatan.jabatan.GSGaji)
+        Jabatan.jabatan.UpdateDataJabataniByIDDatabase(Jabatan.selectedTableJabatan, Jabatan.jabatan.GSGaji, Jabatan.jabatan.GSNama)
+
+        Me.Close()
 
     End Sub
 End Class
