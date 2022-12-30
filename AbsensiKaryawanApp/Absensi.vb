@@ -1,6 +1,8 @@
 ﻿Public Class Absensi
     Public Shared absensi As AbsensiClass
 
+    Dim selectedAbsensiId As Integer = 1
+
     Sub New()
 
         ' This call is required by the designer.
@@ -33,8 +35,24 @@
     End Sub
 
     Private Sub BtnEditAbsensi_Click(sender As Object, e As EventArgs) Handles BtnEditAbsensi.Click
+        Dim selectedAbsen As List(Of String) = absensi.getDataAbsensiByID(selectedAbsensiId)
+
+        absensi.GSid_absensi = selectedAbsensiId
+        absensi.GSid_karyawan = selectedAbsen(0)
+        absensi.GStanggal = selectedAbsen(1)
+        absensi.GSwaktu_masuk = selectedAbsen(2)
+        absensi.GSwaktu_keluar = selectedAbsen(3)
+
         StatusAbsensi.Show()
         Me.Hide()
 
+    End Sub
+
+    Private Sub DataGridViewAbsensi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewAbsensi.CellClick
+        Dim index As Integer = DataGridViewAbsensi.CurrentRow.Index
+        Dim selectedRow As DataGridViewRow
+        selectedRow = DataGridViewAbsensi.Rows(index)
+
+        selectedAbsensiId = selectedRow.Cells(0).Value
     End Sub
 End Class

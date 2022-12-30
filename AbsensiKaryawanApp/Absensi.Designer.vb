@@ -45,7 +45,6 @@ Partial Class Absensi
         '
         'DataGridViewAbsensi
         '
-        Me.DataGridViewAbsensi.AllowUserToAddRows = False
         Me.DataGridViewAbsensi.AllowUserToDeleteRows = False
         Me.DataGridViewAbsensi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewAbsensi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically

@@ -23,7 +23,7 @@ Partial Class StatusAbsensi
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DPWaktu = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DPTanggal = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,6 +34,8 @@ Partial Class StatusAbsensi
         Me.CBNamaPegawai = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.LblIdAbsensi = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -41,7 +43,9 @@ Partial Class StatusAbsensi
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.DateTimePicker1)
+        Me.Panel1.Controls.Add(Me.LblIdAbsensi)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.DPWaktu)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.DPTanggal)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -49,23 +53,23 @@ Partial Class StatusAbsensi
         Me.Panel1.Controls.Add(Me.BtnAbsen)
         Me.Panel1.Controls.Add(Me.CBNamaPegawai)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Location = New System.Drawing.Point(26, 62)
+        Me.Panel1.Location = New System.Drawing.Point(26, 54)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(402, 309)
+        Me.Panel1.Size = New System.Drawing.Size(402, 347)
         Me.Panel1.TabIndex = 5
         '
-        'DateTimePicker1
+        'DPWaktu
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker1.Location = New System.Drawing.Point(235, 95)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(143, 23)
-        Me.DateTimePicker1.TabIndex = 14
+        Me.DPWaktu.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.DPWaktu.Location = New System.Drawing.Point(239, 142)
+        Me.DPWaktu.Name = "DPWaktu"
+        Me.DPWaktu.Size = New System.Drawing.Size(143, 23)
+        Me.DPWaktu.TabIndex = 14
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(281, 77)
+        Me.Label4.Location = New System.Drawing.Point(285, 124)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(41, 15)
         Me.Label4.TabIndex = 13
@@ -74,7 +78,7 @@ Partial Class StatusAbsensi
         'DPTanggal
         '
         Me.DPTanggal.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DPTanggal.Location = New System.Drawing.Point(25, 95)
+        Me.DPTanggal.Location = New System.Drawing.Point(29, 142)
         Me.DPTanggal.Name = "DPTanggal"
         Me.DPTanggal.Size = New System.Drawing.Size(153, 23)
         Me.DPTanggal.TabIndex = 12
@@ -83,7 +87,7 @@ Partial Class StatusAbsensi
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(73, 77)
+        Me.Label2.Location = New System.Drawing.Point(77, 124)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 15)
         Me.Label2.TabIndex = 11
@@ -93,7 +97,7 @@ Partial Class StatusAbsensi
         '
         Me.GroupBox1.Controls.Add(Me.RdnAbsenMasuk)
         Me.GroupBox1.Controls.Add(Me.RdnAbsenKeluar)
-        Me.GroupBox1.Location = New System.Drawing.Point(98, 145)
+        Me.GroupBox1.Location = New System.Drawing.Point(102, 192)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(200, 67)
         Me.GroupBox1.TabIndex = 10
@@ -127,12 +131,12 @@ Partial Class StatusAbsensi
         Me.BtnAbsen.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BtnAbsen.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnAbsen.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnAbsen.Location = New System.Drawing.Point(98, 246)
+        Me.BtnAbsen.Location = New System.Drawing.Point(102, 293)
         Me.BtnAbsen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnAbsen.Name = "BtnAbsen"
         Me.BtnAbsen.Size = New System.Drawing.Size(200, 34)
         Me.BtnAbsen.TabIndex = 7
-        Me.BtnAbsen.Text = "Absen"
+        Me.BtnAbsen.Text = "Ubah Absensi"
         Me.BtnAbsen.UseVisualStyleBackColor = False
         '
         'CBNamaPegawai
@@ -141,7 +145,7 @@ Partial Class StatusAbsensi
         Me.CBNamaPegawai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBNamaPegawai.FormattingEnabled = True
         Me.CBNamaPegawai.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.CBNamaPegawai.Location = New System.Drawing.Point(98, 36)
+        Me.CBNamaPegawai.Location = New System.Drawing.Point(102, 83)
         Me.CBNamaPegawai.Name = "CBNamaPegawai"
         Me.CBNamaPegawai.Size = New System.Drawing.Size(200, 23)
         Me.CBNamaPegawai.TabIndex = 6
@@ -149,7 +153,7 @@ Partial Class StatusAbsensi
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(146, 18)
+        Me.Label3.Location = New System.Drawing.Point(150, 65)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 15)
         Me.Label3.TabIndex = 5
@@ -167,11 +171,29 @@ Partial Class StatusAbsensi
         Me.Label1.Text = "# Edit Absensi"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(29, 12)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(62, 15)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "ID Absensi"
+        '
+        'LblIdAbsensi
+        '
+        Me.LblIdAbsensi.AutoSize = True
+        Me.LblIdAbsensi.Location = New System.Drawing.Point(102, 12)
+        Me.LblIdAbsensi.Name = "LblIdAbsensi"
+        Me.LblIdAbsensi.Size = New System.Drawing.Size(14, 15)
+        Me.LblIdAbsensi.TabIndex = 16
+        Me.LblIdAbsensi.Text = "#"
+        '
         'StatusAbsensi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(456, 383)
+        Me.ClientSize = New System.Drawing.Size(456, 413)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "StatusAbsensi"
@@ -195,6 +217,8 @@ Partial Class StatusAbsensi
     Friend WithEvents CBNamaPegawai As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DPWaktu As DateTimePicker
     Friend WithEvents Label4 As Label
+    Friend WithEvents LblIdAbsensi As Label
+    Friend WithEvents Label5 As Label
 End Class

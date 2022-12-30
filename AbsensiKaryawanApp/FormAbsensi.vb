@@ -37,16 +37,13 @@
         End If
     End Sub
 
-    Private Sub FormAbsensi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CBNamaPegawai.DataSource = Absensi.absensi.getEmployeesName()
-    End Sub
-
     Private Sub FormAbsensi_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Absensi.Show()
 
     End Sub
 
     Private Sub FormAbsensi_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        CBNamaPegawai.DataSource = Absensi.absensi.getEmployeesName()
         waktu_masuk = DateAndTime.Now
         waktu_keluar = DateAndTime.Now
     End Sub
