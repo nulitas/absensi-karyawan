@@ -14,9 +14,6 @@ Public Class KaryawanClass
     End Sub
 
 
-
-
-
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
     Public Shared sqlRead As MySqlDataReader
@@ -121,7 +118,7 @@ Public Class KaryawanClass
 
     End Function
 
-    Public Function AddDataKaryawanDatabase(nik_karyawan As String, nama_karyawan As String, alamat_karyawan As String, jabatan As String)
+    Public Function AddDataKaryawanDatabase(nik_karyawan As String, nama_karyawan As String, alamat_karyawan As String, jabatan_id As String)
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
 
         Try
@@ -131,7 +128,7 @@ Public Class KaryawanClass
                         & nik_karyawan & "', '" _
                         & nama_karyawan & "', '" _
                         & alamat_karyawan & "', '" _
-                        & jabatan & "')"
+                        & jabatan_id & "')"
 
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
@@ -176,19 +173,23 @@ Public Class KaryawanClass
 
     End Function
 
-    Public Function UpdateDataKaryawanByIDDatabase(ID As Integer,
-                                  nik_karyawan As String, nama_karyawan As String, alamat_karyawan As String, jabatan As String)
+    Public Function UpdateDataKaryawanByIDDatabase(id_karyawan As Integer,
+                                  nik_karyawan As String, nama_karyawan As String, alamat_karyawan As String, jabatan_id As String)
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "UPDATE karyawan SET " &
-                        "nik = '" & nik_karyawan & "',  " &
-                        "nama = '" & nama_karyawan & "',  " &
-                        "alamat = '" & alamat_karyawan & "',  " &
-                         "id_jabatan = '" & jabatan & "',  " &
-                        "WHERE id_karyawan= '" & ID & "'"
+
+
+            sqlQuery = "UPDATE karyawan
+                        SET id_karyawan=" & id_karyawan &
+                        ", nik='" & nik_karyawan &
+                        "', nama= '" & nama_karyawan &
+                         "',alamat='" & alamat_karyawan &
+                        "', id_jabatan= '" & jabatan_id & "' " &
+                        "WHERE id_karyawan= " & id_karyawan & ";"
+
             Debug.Print(sqlQuery)
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader

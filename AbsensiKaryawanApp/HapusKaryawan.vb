@@ -11,5 +11,6 @@
     Private Sub BtnHapusKaryawan_Click(sender As Object, e As EventArgs) Handles BtnHapusKaryawan.Click
         AbsensiKaryawan.karyawan.DeleteDataKaryawanDatabase(Karyawan.selectedTableKaryawan)
 
+        Me.Close()
     End Sub
 End Class
