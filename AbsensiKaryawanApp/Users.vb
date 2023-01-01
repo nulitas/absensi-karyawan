@@ -106,6 +106,7 @@ Public Class Users
             sqlRead.Close()
             dbConn.Close()
         Catch ex As Exception
+            MsgBox(ex.Message)
             Return ex.Message
         Finally
             dbConn.Dispose()

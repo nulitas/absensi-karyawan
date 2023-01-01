@@ -34,9 +34,10 @@ Partial Class AbsensiKaryawan
         Me.BtnFormKaryawan.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BtnFormKaryawan.Font = New System.Drawing.Font("Myanmar Text", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnFormKaryawan.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.BtnFormKaryawan.Location = New System.Drawing.Point(23, 164)
+        Me.BtnFormKaryawan.Location = New System.Drawing.Point(20, 123)
+        Me.BtnFormKaryawan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnFormKaryawan.Name = "BtnFormKaryawan"
-        Me.BtnFormKaryawan.Size = New System.Drawing.Size(391, 154)
+        Me.BtnFormKaryawan.Size = New System.Drawing.Size(342, 116)
         Me.BtnFormKaryawan.TabIndex = 0
         Me.BtnFormKaryawan.Text = "Data Karyawan"
         Me.BtnFormKaryawan.UseVisualStyleBackColor = False
@@ -46,9 +47,10 @@ Partial Class AbsensiKaryawan
         Me.BtnFormJabatan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnFormJabatan.Font = New System.Drawing.Font("Myanmar Text", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnFormJabatan.ForeColor = System.Drawing.Color.Black
-        Me.BtnFormJabatan.Location = New System.Drawing.Point(444, 164)
+        Me.BtnFormJabatan.Location = New System.Drawing.Point(388, 123)
+        Me.BtnFormJabatan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnFormJabatan.Name = "BtnFormJabatan"
-        Me.BtnFormJabatan.Size = New System.Drawing.Size(432, 87)
+        Me.BtnFormJabatan.Size = New System.Drawing.Size(378, 65)
         Me.BtnFormJabatan.TabIndex = 1
         Me.BtnFormJabatan.Text = "Lihat Detail Jabatan"
         Me.BtnFormJabatan.UseVisualStyleBackColor = True
@@ -58,9 +60,9 @@ Partial Class AbsensiKaryawan
         Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label1.Font = New System.Drawing.Font("Myanmar Text", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label1.Location = New System.Drawing.Point(23, 26)
+        Me.Label1.Location = New System.Drawing.Point(20, 20)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(886, 56)
+        Me.Label1.Size = New System.Drawing.Size(775, 42)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "# Menu"
         '
@@ -69,9 +71,10 @@ Partial Class AbsensiKaryawan
         Me.BtnFormAbsensi.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnFormAbsensi.Font = New System.Drawing.Font("Myanmar Text", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnFormAbsensi.ForeColor = System.Drawing.Color.Black
-        Me.BtnFormAbsensi.Location = New System.Drawing.Point(23, 324)
+        Me.BtnFormAbsensi.Location = New System.Drawing.Point(20, 243)
+        Me.BtnFormAbsensi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnFormAbsensi.Name = "BtnFormAbsensi"
-        Me.BtnFormAbsensi.Size = New System.Drawing.Size(391, 72)
+        Me.BtnFormAbsensi.Size = New System.Drawing.Size(342, 54)
         Me.BtnFormAbsensi.TabIndex = 5
         Me.BtnFormAbsensi.Text = "Absensi"
         Me.BtnFormAbsensi.UseVisualStyleBackColor = True
@@ -81,24 +84,27 @@ Partial Class AbsensiKaryawan
         Me.BtnFormPenggajian.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnFormPenggajian.Font = New System.Drawing.Font("Myanmar Text", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnFormPenggajian.ForeColor = System.Drawing.Color.Black
-        Me.BtnFormPenggajian.Location = New System.Drawing.Point(444, 324)
+        Me.BtnFormPenggajian.Location = New System.Drawing.Point(388, 243)
+        Me.BtnFormPenggajian.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnFormPenggajian.Name = "BtnFormPenggajian"
-        Me.BtnFormPenggajian.Size = New System.Drawing.Size(432, 72)
+        Me.BtnFormPenggajian.Size = New System.Drawing.Size(378, 54)
         Me.BtnFormPenggajian.TabIndex = 6
         Me.BtnFormPenggajian.Text = "Gaji"
         Me.BtnFormPenggajian.UseVisualStyleBackColor = True
         '
         'AbsensiKaryawan
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(941, 570)
+        Me.ClientSize = New System.Drawing.Size(823, 428)
         Me.Controls.Add(Me.BtnFormPenggajian)
         Me.Controls.Add(Me.BtnFormAbsensi)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnFormJabatan)
         Me.Controls.Add(Me.BtnFormKaryawan)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "AbsensiKaryawan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AbsensiKaryawan"
         Me.ResumeLayout(False)
 
