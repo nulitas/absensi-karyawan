@@ -5,7 +5,8 @@
     Public Shared selectedTableJabatanNama
 
     Private Sub ReloadDataTableDatabase()
-        DataGridViewJabatan.DataSource = jabatan.GetDataJabatanDatabase()
+        DataGridViewJabatan.DataSource = jabatan.GetDataJabatan()
+        DataGridViewJabatan.Rows(0).Cells(0).Selected = False
     End Sub
 
     Private Sub BtnTambahJabatan_Click(sender As Object, e As EventArgs) Handles BtnTambahJabatan.Click
@@ -13,13 +14,21 @@
     End Sub
 
     Private Sub BtnEditJabatan_Click(sender As Object, e As EventArgs) Handles BtnEditJabatan.Click
-        Dim selectedJabatan As List(Of String) = jabatan.GetDataJabatanByIDDatabase(selectedTableJabatan)
 
 
-        jabatan.GSNama = selectedJabatan(2)
-        jabatan.GSGaji = selectedJabatan(1)
+        Try
+            Dim selectedJabatan As List(Of String) = jabatan.GetDataJabatanByID(selectedTableJabatan)
 
-        EditJabatan.Show()
+
+            jabatan.GSNama = selectedJabatan(1)
+            jabatan.GSGaji = selectedJabatan(2)
+
+            EditJabatan.Show()
+
+        Catch ex As Exception
+            MessageBox.Show("Pilih row terlebih dahulu!")
+        End Try
+
     End Sub
 
     Private Sub BtnHapusJabatan_Click(sender As Object, e As EventArgs) Handles BtnHapusJabatan.Click
@@ -37,5 +46,10 @@
 
         selectedTableJabatan = selectedRow.Cells(0).Value
         selectedTableJabatanNama = selectedRow.Cells(1).Value
+    End Sub
+
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+        AbsensiKaryawan.Show()
+        Me.Hide()
     End Sub
 End Class

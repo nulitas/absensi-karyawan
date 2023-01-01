@@ -33,14 +33,14 @@ Public Class JabatanClass
             gaji = value
         End Set
     End Property
-    Public Function GetDataJabatanDatabase() As DataTable
+    Public Function GetDataJabatan() As DataTable
         Dim result As New DataTable
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlCommand.CommandText = "SELECT id_jabatan as 'ID' , 
-                                  gaji_perhari as 'Gaji',
-                                  nama_jabatan as 'Nama Jabatan'
+                                  nama_jabatan as 'Nama Jabatan',
+                                  gaji_perhari as 'Gaji'
                                   FROM jabatan"
 
         sqlRead = sqlCommand.ExecuteReader
@@ -51,14 +51,14 @@ Public Class JabatanClass
         Return result
     End Function
 
-    Public Function GetDataJabatanByIDDatabase(ID As Integer) As List(Of String)
+    Public Function GetDataJabatanByID(ID As Integer) As List(Of String)
         Dim result As New List(Of String)
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlCommand.CommandText = "SELECT id_jabatan as 'ID' , 
-                                  gaji_perhari as 'Gaji',
-                                  nama_jabatan as 'Nama Jabatan'
+                                  nama_jabatan as 'Nama Jabatan',
+                                  gaji_perhari as 'Gaji'
                                   FROM jabatan  WHERE id_jabatan='" & ID & "' "
 
         sqlRead = sqlCommand.ExecuteReader
@@ -73,7 +73,7 @@ Public Class JabatanClass
         Return result
     End Function
 
-    Public Function AddDataJabatanDatabase(nama_jabatan As String, gaji_jabatan As String)
+    Public Function AddDataJabatan(nama_jabatan As String, gaji_jabatan As String)
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
@@ -99,7 +99,7 @@ Public Class JabatanClass
 
 
 
-    Public Function DeleteDataJabatanByIDDatabase(ID As Integer)
+    Public Function DeleteDataJabatanByID(ID As Integer)
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
@@ -123,8 +123,8 @@ Public Class JabatanClass
 
     End Function
 
-    Public Function UpdateDataJabataniByIDDatabase(id_jabatan As Integer,
-                                 gaji_jabatan As String, nama_jabatan As String)
+    Public Function UpdateDataJabataniByID(id_jabatan As Integer,
+                                  nama_jabatan As String, gaji_jabatan As String)
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
