@@ -12,4 +12,14 @@
         Login.Close()
 
     End Sub
+
+    Private Sub BtnFormKaryawan_Click(sender As Object, e As EventArgs) Handles BtnFormKaryawan.Click
+        Karyawan.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub BtnFormJabatan_Click(sender As Object, e As EventArgs) Handles BtnFormJabatan.Click
+        Jabatan.Show()
+        Me.Hide()
+    End Sub
 End Class
