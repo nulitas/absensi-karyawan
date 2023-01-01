@@ -33,7 +33,9 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
+
             Me.MainForm = Global.AbsensiKaryawanApp.Absensi
+
         End Sub
     End Class
 End Namespace
