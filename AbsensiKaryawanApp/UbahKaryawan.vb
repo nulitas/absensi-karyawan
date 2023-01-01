@@ -19,6 +19,8 @@ Public Class UbahKaryawan
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
+        PictureBox1.Load(Karyawan.karyawan.GSFoto)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
 
         TxtNama.Text = Karyawan.karyawan.GSNama
         TxtNik.Text = Karyawan.karyawan.GSNik
@@ -29,19 +31,26 @@ Public Class UbahKaryawan
 
     End Sub
 
-    Private Sub BtnUbahKaryawan_Click(sender As Object, e As EventArgs) Handles BtnUbahKaryawan.Click
-        AbsensiKaryawan.karyawan.GSJabatan = CBJabatan.SelectedValue
-        'AbsensiKaryawan.karyawan.GSJabatan = TxtJabatan.Text
-        AbsensiKaryawan.karyawan.GSNama = TxtNama.Text
-        AbsensiKaryawan.karyawan.GSNik = TxtNik.Text
-        AbsensiKaryawan.karyawan.GSAlamat = TxtAlamat.Text
+    Private Sub BtnUploadFoto_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BtnUploadFoto_Click_1(sender As Object, e As EventArgs) Handles BtnUploadFoto.Click
+        OpenFileDialog1.Title = "Upload Foto"
+        OpenFileDialog1.Filter = "All Format|*.*"
+        OpenFileDialog1.ShowDialog()
 
 
-        AbsensiKaryawan.karyawan.UpdateDataKaryawanByIDDatabase(Karyawan.selectedTableKaryawan, AbsensiKaryawan.karyawan.GSNik, AbsensiKaryawan.karyawan.GSNama, AbsensiKaryawan.karyawan.GSAlamat, AbsensiKaryawan.karyawan.GSJabatan)
-        Me.Close()
+
+        Dim picKKaryawanDir As String = OpenFileDialog1.FileName
+
+        PictureBox1.Load(picKKaryawanDir)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        Karyawan.karyawan.GSFoto = picKKaryawanDir.ToString()
+        Karyawan.karyawan.GSFoto = Karyawan.karyawan.GSFoto.Replace("\", "/")
     End Sub
     Private Sub UbahKaryawan_Load(sender As Object, e As EventArgs) Handles Me.Load
-        dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + Database + ";" + "Convert Zero Datetime=True"
+        dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
@@ -63,5 +72,18 @@ Public Class UbahKaryawan
         Finally
             dbConn.Dispose()
         End Try
+    End Sub
+
+
+    Private Sub BtnUbahKaryawan_Click_1(sender As Object, e As EventArgs) Handles BtnUbahKaryawan.Click
+        Karyawan.karyawan.GSJabatan = CBJabatan.SelectedValue
+        'AbsensiKaryawan.karyawan.GSJabatan = TxtJabatan.Text
+        Karyawan.karyawan.GSNama = TxtNama.Text
+        Karyawan.karyawan.GSNik = TxtNik.Text
+        Karyawan.karyawan.GSAlamat = TxtAlamat.Text
+
+
+        Karyawan.karyawan.UpdateDataKaryawanByID(Karyawan.selectedTableKaryawan, Karyawan.karyawan.GSFoto, Karyawan.karyawan.GSNik, Karyawan.karyawan.GSNama, Karyawan.karyawan.GSAlamat, Karyawan.karyawan.GSJabatan)
+        Me.Close()
     End Sub
 End Class

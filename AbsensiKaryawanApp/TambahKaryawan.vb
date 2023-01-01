@@ -13,6 +13,22 @@ Public Class TambahKaryawan
     Private username As String = "root"
     Private password As String = ""
     Private database As String = "absensi_karyawan"
+
+
+
+    Private Sub BtnUploadFoto_Click(sender As Object, e As EventArgs) Handles BtnUploadFoto.Click
+        OpenFileDialog1.Title = "Upload Foto"
+        OpenFileDialog1.Filter = "All Format|*.*"
+        OpenFileDialog1.ShowDialog()
+
+        FotoKaryawan = OpenFileDialog1.FileName
+
+        PictureBox1.Load(FotoKaryawan)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        Karyawan.karyawan.GSFoto = FotoKaryawan.ToString()
+        Karyawan.karyawan.GSFoto = Karyawan.karyawan.GSFoto.Replace("\", "/")
+    End Sub
+
     Private Sub BtnTambahKaryawan_Click(sender As Object, e As EventArgs) Handles BtnTambahKaryawan.Click
         'AbsensiKaryawan.GSAbsensi.GSJabatan = CBJabatan.Text
 
@@ -24,7 +40,7 @@ Public Class TambahKaryawan
 
 
 
-        Karyawan.karyawan.AddDataKaryawanDatabase(Karyawan.karyawan.GSNik, Karyawan.karyawan.GSNama, Karyawan.karyawan.GSAlamat, Karyawan.karyawan.GSJabatan)
+        Karyawan.karyawan.AddDataKaryawan(Karyawan.karyawan.GSFoto, Karyawan.karyawan.GSNik, Karyawan.karyawan.GSNama, Karyawan.karyawan.GSAlamat, Karyawan.karyawan.GSJabatan)
 
         Me.Close()
     End Sub
@@ -60,19 +76,6 @@ Public Class TambahKaryawan
     End Sub
 
 
-
-    Private Sub BtnUploadFoto_Click(sender As Object, e As EventArgs) Handles BtnUploadFoto.Click
-        OpenFileDialog1.Title = "Upload Foto"
-        OpenFileDialog1.Filter = "All Format|*.*"
-        OpenFileDialog1.ShowDialog()
-
-        FotoKaryawan = OpenFileDialog1.FileName
-
-        PictureBox1.Load(FotoKaryawan)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        AbsensiKaryawan.karyawan.GSFoto = FotoKaryawan.ToString()
-        AbsensiKaryawan.karyawan.GSFoto = AbsensiKaryawan.karyawan.GSFoto.Replace("\", "/")
-    End Sub
 
     Private Sub TxtNik_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNik.KeyPress
         If Not Char.IsNumber(e.KeyChar) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) Then

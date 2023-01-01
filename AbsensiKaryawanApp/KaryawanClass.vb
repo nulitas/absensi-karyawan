@@ -8,10 +8,7 @@ Public Class KaryawanClass
     Private nama As String
     Private alamat As String
     Private jabatan As String
-    Private db As Database
-    Public Sub New()
-        db = New Database()
-    End Sub
+
 
 
     Public Shared dbConn As New MySqlConnection
@@ -70,12 +67,13 @@ Public Class KaryawanClass
         End Set
     End Property
 
-    Public Function GetDataKaryawanDatabase() As DataTable
+    Public Function GetDataKaryawan() As DataTable
         Dim result As New DataTable
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlCommand.CommandText = "SELECT id_karyawan AS 'ID',
+                                  foto as 'Foto',
                                   nik as 'NIK',
                                   nama AS 'Nama Karyawan',
                                   alamat AS 'Alamat',
@@ -89,7 +87,7 @@ Public Class KaryawanClass
         Return result
     End Function
 
-    Public Function GetDataKaryawanByIDDatabase(ID As Integer) As List(Of String)
+    Public Function GetDataKaryawanByID(ID As Integer) As List(Of String)
 
         Dim result As New List(Of String)
 
@@ -97,6 +95,7 @@ Public Class KaryawanClass
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlCommand.CommandText = "SELECT id_karyawan AS 'ID',
+                                  foto as 'Foto',
                                   nik as 'NIK',
                                   nama AS 'Nama Karyawan',
                                   alamat AS 'Alamat',
@@ -109,6 +108,7 @@ Public Class KaryawanClass
             result.Add(sqlRead.GetString(2).ToString())
             result.Add(sqlRead.GetString(3).ToString())
             result.Add(sqlRead.GetString(4).ToString())
+            result.Add(sqlRead.GetString(5).ToString())
 
         End While
 
@@ -118,13 +118,14 @@ Public Class KaryawanClass
 
     End Function
 
-    Public Function AddDataKaryawanDatabase(nik_karyawan As String, nama_karyawan As String, alamat_karyawan As String, jabatan_id As String)
+    Public Function AddDataKaryawan(foto_karyawan As String, nik_karyawan As String, nama_karyawan As String, alamat_karyawan As String, jabatan_id As String)
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
 
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "INSERT INTO karyawan (nik, nama, alamat,id_jabatan ) VALUE('" _
+            sqlQuery = "INSERT INTO karyawan (foto, nik, nama, alamat,id_jabatan ) VALUE('" _
+                        & foto_karyawan & "', '" _
                         & nik_karyawan & "', '" _
                         & nama_karyawan & "', '" _
                         & alamat_karyawan & "', '" _
@@ -147,7 +148,7 @@ Public Class KaryawanClass
 
 
 
-    Public Function DeleteDataKaryawanDatabase(ID As Integer)
+    Public Function DeleteDataKaryawan(ID As Integer)
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
 
@@ -173,7 +174,7 @@ Public Class KaryawanClass
 
     End Function
 
-    Public Function UpdateDataKaryawanByIDDatabase(id_karyawan As Integer,
+    Public Function UpdateDataKaryawanByID(id_karyawan As Integer, foto_karyawan As String,
                                   nik_karyawan As String, nama_karyawan As String, alamat_karyawan As String, jabatan_id As String)
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
@@ -184,7 +185,8 @@ Public Class KaryawanClass
 
             sqlQuery = "UPDATE karyawan
                         SET id_karyawan=" & id_karyawan &
-                        ", nik='" & nik_karyawan &
+                        ", foto='" & foto_karyawan &
+                        "', nik='" & nik_karyawan &
                         "', nama= '" & nama_karyawan &
                          "',alamat='" & alamat_karyawan &
                         "', id_jabatan= '" & jabatan_id & "' " &
