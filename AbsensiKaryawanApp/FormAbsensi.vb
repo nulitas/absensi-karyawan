@@ -23,13 +23,11 @@
         If Absensi.absensi.CheckEmployee(employeeId, selectedEmployee) Then
             If RdnAbsenMasuk.Checked Then
                 'stringKeluar = "NULL"
-                stringMasuk = "'" & waktu_masuk.Year & "-" & waktu_masuk.Month & "-" &
-                          waktu_masuk.Day & " " & waktu_masuk.Hour & ":" &
+                stringMasuk = "'" & waktu_masuk.Hour & ":" &
                           waktu_masuk.Minute & ":" & waktu_masuk.Second & "'"
             ElseIf RdnAbsenKeluar.Checked Then
                 'stringMasuk = "NULL"
-                stringKeluar = "'" & waktu_keluar.Year & "-" & waktu_keluar.Month & "-" &
-                           waktu_keluar.Day & " " & waktu_keluar.Hour & ":" &
+                stringKeluar = "'" & waktu_keluar.Hour & ":" &
                            waktu_keluar.Minute & ":" & waktu_keluar.Second & "'"
             End If
             Absensi.absensi.AddDataAbsen(employeeId, Date.Today, stringMasuk, stringKeluar)
