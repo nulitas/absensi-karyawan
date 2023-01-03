@@ -21,6 +21,7 @@
 
         If Absensi.absensi.GSwaktu_masuk <> "NULL" Then
             RdnAbsenMasuk.Checked = True
+            'tes
             DPWaktu.Value = Absensi.absensi.GSwaktu_masuk
         ElseIf Absensi.absensi.GSwaktu_keluar <> "NULL" Then
             RdnAbsenKeluar.Checked = True
