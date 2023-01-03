@@ -22,4 +22,9 @@
         Jabatan.Show()
         Me.Hide()
     End Sub
+
+    Private Sub BtnFormPenggajian_Click(sender As Object, e As EventArgs) Handles BtnFormPenggajian.Click
+        Penggajian.Show()
+        Me.Hide()
+    End Sub
 End Class

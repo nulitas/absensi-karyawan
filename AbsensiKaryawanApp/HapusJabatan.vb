@@ -12,7 +12,11 @@
     End Sub
 
 
-    Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
+    Private Sub BtnHapus_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BtnHapus_Click_1(sender As Object, e As EventArgs) Handles BtnHapus.Click
         Jabatan.jabatan.DeleteDataJabatanByID(Jabatan.selectedTableJabatan)
         Me.Close()
     End Sub

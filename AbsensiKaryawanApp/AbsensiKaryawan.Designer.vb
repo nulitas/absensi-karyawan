@@ -36,7 +36,7 @@ Partial Class AbsensiKaryawan
         Me.BtnFormKaryawan.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.BtnFormKaryawan.Location = New System.Drawing.Point(23, 164)
         Me.BtnFormKaryawan.Name = "BtnFormKaryawan"
-        Me.BtnFormKaryawan.Size = New System.Drawing.Size(391, 155)
+        Me.BtnFormKaryawan.Size = New System.Drawing.Size(391, 87)
         Me.BtnFormKaryawan.TabIndex = 0
         Me.BtnFormKaryawan.Text = "Data Karyawan"
         Me.BtnFormKaryawan.UseVisualStyleBackColor = False
