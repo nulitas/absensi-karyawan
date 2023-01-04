@@ -90,6 +90,7 @@ Public Class AbsensiClass
             Return result
 
         Catch ex As Exception
+            dbConn.Close()
             MsgBox(ex.Message)
         Finally
             dbConn.Dispose()
@@ -128,7 +129,7 @@ Public Class AbsensiClass
             Return result
 
         Catch ex As Exception
-
+            dbConn.Close()
             MsgBox(ex.Message)
 
         Finally
@@ -231,21 +232,28 @@ Public Class AbsensiClass
     Public Function CheckEmployee(id_karyawan As Integer, nama As String) As Boolean
         dbConn.ConnectionString = "server =" + server + ";user id =" + username _
                                  + ";password =" + password + ";database =" + database
-        dbConn.Open()
-        sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT nik FROM karyawan WHERE nama='" & nama &
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlCommand.CommandText = "SELECT nik FROM karyawan WHERE nama='" & nama &
                                      "' AND id_karyawan=" & id_karyawan
-        sqlRead = sqlCommand.ExecuteReader
+            sqlRead = sqlCommand.ExecuteReader
 
-        If Not sqlRead.HasRows Then
-            MsgBox("ID Karyawan dengan nama tidak sesuai!")
-            Return False
-        End If
+            If Not sqlRead.HasRows Then
+                MsgBox("ID Karyawan dengan nama tidak sesuai!")
+                sqlRead.Close()
+                dbConn.Close()
+                Return False
+            End If
 
-        sqlRead.Close()
-        dbConn.Close()
+            sqlRead.Close()
+            dbConn.Close()
 
-        Return True
+            Return True
+        Catch ex As Exception
+            dbConn.Close()
+            MsgBox(ex.Message)
+        End Try
         'Try
 
 

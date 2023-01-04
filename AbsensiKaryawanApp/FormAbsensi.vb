@@ -59,9 +59,9 @@
         id_karyawan = Absensi.absensi.GetEmployyeIDByName(CBNamaPegawai.SelectedItem)
         id_absen = Absensi.absensi.CheckOnAbsenKeluar(id_karyawan)
         'MsgBox(id_absen)
+        Dim listdata = Absensi.absensi.GetDataAbsensiByID(id_absen)
 
         If id_absen > 0 Then
-            Dim listdata = Absensi.absensi.GetDataAbsensiByID(id_absen)
             RdnAbsenMasuk.Enabled = False
             RdnAbsenKeluar.Enabled = True
             'MsgBox(id_absen)
