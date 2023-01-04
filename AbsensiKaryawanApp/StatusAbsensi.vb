@@ -15,17 +15,17 @@
         DPTanggal.CustomFormat = "yyyy/MM/dd"
         DPTanggal.Value = Absensi.absensi.GStanggal
 
-        DPWaktu.Format = DateTimePickerFormat.Custom
-        DPWaktu.CustomFormat = "HH:mm:ss"
+        DPWaktuMasuk.Format = DateTimePickerFormat.Custom
+        DPWaktuMasuk.CustomFormat = "HH:mm:ss"
 
+        DPWaktuKeluar.Format = DateTimePickerFormat.Custom
+        DPWaktuKeluar.CustomFormat = "HH:mm:ss"
 
-        If Absensi.absensi.GSwaktu_masuk <> "NULL" Then
-            RdnAbsenMasuk.Checked = True
-            'tes
-            DPWaktu.Value = Absensi.absensi.GSwaktu_masuk
-        ElseIf Absensi.absensi.GSwaktu_keluar <> "NULL" Then
-            RdnAbsenKeluar.Checked = True
-            DPWaktu.Value = Absensi.absensi.GSwaktu_keluar
+        DPWaktuMasuk.Value = Absensi.absensi.GStanggal & " " & Absensi.absensi.GSwaktu_masuk
+        If Absensi.absensi.GSwaktu_keluar = "NULL" Then
+            DPWaktuKeluar.Value = Absensi.absensi.GStanggal
+        Else
+            DPWaktuKeluar.Value = Absensi.absensi.GStanggal & " " & Absensi.absensi.GSwaktu_keluar
         End If
 
     End Sub
@@ -43,20 +43,17 @@
         Dim idEmployee = Absensi.absensi.GetEmployyeIDByName(CBNamaPegawai.SelectedValue)
 
 
-        Dim stringMasuk = "'" & DPTanggal.Value.Year & "-" & DPTanggal.Value.Month & "-" &
-                          DPTanggal.Value.Day & " " & DPWaktu.Value.Hour & ":" &
-                          DPWaktu.Value.Minute & ":" & DPWaktu.Value.Second & "'"
+        Dim stringMasuk = "'" & DPWaktuMasuk.Value.Hour & ":" & DPWaktuMasuk.Value.Minute &
+                            ":" & DPWaktuMasuk.Value.Second & "'"
 
-        Dim stringKeluar = "'" & DPTanggal.Value.Year & "-" & DPTanggal.Value.Month & "-" &
-                           DPTanggal.Value.Day & " " & DPWaktu.Value.Hour & ":" &
-                           DPWaktu.Value.Minute & ":" & DPWaktu.Value.Second & "'"
+        Dim stringKeluar = "'" & DPWaktuKeluar.Value.Hour & ":" & DPWaktuKeluar.Value.Minute &
+                            ":" & DPWaktuKeluar.Value.Second & "'"
 
-        If RdnAbsenMasuk.Checked Then
-            stringKeluar = "NULL"
-        ElseIf RdnAbsenKeluar.Checked Then
-            stringMasuk = "NULL"
-        End If
-        Absensi.absensi.UpdateDataAbsensi(idEmployee, DPTanggal.Value, stringMasuk, stringKeluar)
+        Absensi.absensi.UpdateDataAbsensi(LblIdAbsensi.Text,
+                                          idEmployee,
+                                          DPTanggal.Value,
+                                          stringMasuk,
+                                          stringKeluar)
         Me.Close()
         Absensi.Show()
     End Sub
