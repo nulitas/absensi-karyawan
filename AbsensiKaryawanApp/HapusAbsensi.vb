@@ -10,13 +10,12 @@
         LblKaryawan.Text = Absensi.absensi.GSid_karyawan &
                            " - " & Absensi.absensi.GetEmployeeNameByID(Absensi.absensi.GSid_karyawan)
         LblTanggal.Text = Absensi.absensi.GStanggal
-        If Absensi.absensi.GSwaktu_keluar <> "NULL" Then
-            LblJenisAbsen.Text = "Absen Keluar"
-            LblWaktu.Text = Absensi.absensi.GSwaktu_keluar
-        ElseIf Absensi.absensi.GSwaktu_masuk <> "NULL" Then
-            LblJenisAbsen.Text = "Absen Masuk"
-            LblWaktu.Text = Absensi.absensi.GSwaktu_masuk
-        End If
+        LblWaktuMasuk.Text = Absensi.absensi.GSwaktu_masuk
+        LblWaktuKeluar.Text = Absensi.absensi.GSwaktu_keluar
+        'If Absensi.absensi.GSwaktu_keluar <> "NULL" Then
+        'ElseIf Absensi.absensi.GSwaktu_masuk <> "NULL" Then
+        '    LblJenisAbsen.Text = "Absen Masuk"
+        'End If
 
     End Sub
 

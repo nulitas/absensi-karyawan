@@ -75,7 +75,7 @@
             HapusAbsensi.Show()
             Me.Hide()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("Harap pilih baris terlebih dahulu sebelum menghapus!")
         End Try
 
     End Sub
