@@ -28,14 +28,14 @@ Partial Class HapusAbsensi
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.lblidAbsensi = New System.Windows.Forms.Label()
         Me.LblKaryawan = New System.Windows.Forms.Label()
         Me.LblTanggal = New System.Windows.Forms.Label()
-        Me.LblWaktu = New System.Windows.Forms.Label()
-        Me.LblJenisAbsen = New System.Windows.Forms.Label()
+        Me.LblWaktuMasuk = New System.Windows.Forms.Label()
         Me.BtnHapusAbsensi = New System.Windows.Forms.Button()
         Me.BtnKembali = New System.Windows.Forms.Button()
+        Me.LblWaktuKeluar = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -92,18 +92,9 @@ Partial Class HapusAbsensi
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(138, 193)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(41, 15)
+        Me.Label6.Size = New System.Drawing.Size(79, 15)
         Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Waktu"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(138, 227)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(76, 15)
-        Me.Label7.TabIndex = 7
-        Me.Label7.Text = "Jenis Absensi"
+        Me.Label6.Text = "Waktu Masuk"
         '
         'lblidAbsensi
         '
@@ -132,23 +123,14 @@ Partial Class HapusAbsensi
         Me.LblTanggal.TabIndex = 10
         Me.LblTanggal.Text = "#tanggal"
         '
-        'LblWaktu
+        'LblWaktuMasuk
         '
-        Me.LblWaktu.AutoSize = True
-        Me.LblWaktu.Location = New System.Drawing.Point(248, 193)
-        Me.LblWaktu.Name = "LblWaktu"
-        Me.LblWaktu.Size = New System.Drawing.Size(46, 15)
-        Me.LblWaktu.TabIndex = 11
-        Me.LblWaktu.Text = "#waktu"
-        '
-        'LblJenisAbsen
-        '
-        Me.LblJenisAbsen.AutoSize = True
-        Me.LblJenisAbsen.Location = New System.Drawing.Point(248, 227)
-        Me.LblJenisAbsen.Name = "LblJenisAbsen"
-        Me.LblJenisAbsen.Size = New System.Drawing.Size(80, 15)
-        Me.LblJenisAbsen.TabIndex = 12
-        Me.LblJenisAbsen.Text = "#jenis absensi"
+        Me.LblWaktuMasuk.AutoSize = True
+        Me.LblWaktuMasuk.Location = New System.Drawing.Point(248, 193)
+        Me.LblWaktuMasuk.Name = "LblWaktuMasuk"
+        Me.LblWaktuMasuk.Size = New System.Drawing.Size(81, 15)
+        Me.LblWaktuMasuk.TabIndex = 11
+        Me.LblWaktuMasuk.Text = "#waktuMasuk"
         '
         'BtnHapusAbsensi
         '
@@ -159,7 +141,7 @@ Partial Class HapusAbsensi
         Me.BtnHapusAbsensi.Location = New System.Drawing.Point(276, 277)
         Me.BtnHapusAbsensi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnHapusAbsensi.Name = "BtnHapusAbsensi"
-        Me.BtnHapusAbsensi.Size = New System.Drawing.Size(92, 36)
+        Me.BtnHapusAbsensi.Size = New System.Drawing.Size(95, 36)
         Me.BtnHapusAbsensi.TabIndex = 14
         Me.BtnHapusAbsensi.Text = "Hapus"
         Me.BtnHapusAbsensi.UseVisualStyleBackColor = False
@@ -177,19 +159,37 @@ Partial Class HapusAbsensi
         Me.BtnKembali.Text = "Batal"
         Me.BtnKembali.UseVisualStyleBackColor = False
         '
+        'LblWaktuKeluar
+        '
+        Me.LblWaktuKeluar.AutoSize = True
+        Me.LblWaktuKeluar.Location = New System.Drawing.Point(248, 223)
+        Me.LblWaktuKeluar.Name = "LblWaktuKeluar"
+        Me.LblWaktuKeluar.Size = New System.Drawing.Size(79, 15)
+        Me.LblWaktuKeluar.TabIndex = 17
+        Me.LblWaktuKeluar.Text = "#waktuKeluar"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(138, 223)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(77, 15)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Waktu Keluar"
+        '
         'HapusAbsensi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(466, 350)
+        Me.Controls.Add(Me.LblWaktuKeluar)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.BtnKembali)
         Me.Controls.Add(Me.BtnHapusAbsensi)
-        Me.Controls.Add(Me.LblJenisAbsen)
-        Me.Controls.Add(Me.LblWaktu)
+        Me.Controls.Add(Me.LblWaktuMasuk)
         Me.Controls.Add(Me.LblTanggal)
         Me.Controls.Add(Me.LblKaryawan)
         Me.Controls.Add(Me.lblidAbsensi)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -210,12 +210,12 @@ Partial Class HapusAbsensi
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents lblidAbsensi As Label
     Friend WithEvents LblKaryawan As Label
     Friend WithEvents LblTanggal As Label
-    Friend WithEvents LblWaktu As Label
-    Friend WithEvents LblJenisAbsen As Label
+    Friend WithEvents LblWaktuMasuk As Label
     Friend WithEvents BtnHapusAbsensi As Button
     Friend WithEvents BtnKembali As Button
+    Friend WithEvents LblWaktuKeluar As Label
+    Friend WithEvents Label8 As Label
 End Class

@@ -25,31 +25,30 @@ Partial Class StatusAbsensi
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LblIdAbsensi = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.DPWaktu = New System.Windows.Forms.DateTimePicker()
+        Me.DPWaktuMasuk = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DPTanggal = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RdnAbsenMasuk = New System.Windows.Forms.RadioButton()
-        Me.RdnAbsenKeluar = New System.Windows.Forms.RadioButton()
         Me.BtnAbsen = New System.Windows.Forms.Button()
         Me.CBNamaPegawai = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DPWaktuKeluar = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.DPWaktuKeluar)
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.LblIdAbsensi)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.DPWaktu)
+        Me.Panel1.Controls.Add(Me.DPWaktuMasuk)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.DPTanggal)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.BtnAbsen)
         Me.Panel1.Controls.Add(Me.CBNamaPegawai)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -76,27 +75,27 @@ Partial Class StatusAbsensi
         Me.Label5.TabIndex = 15
         Me.Label5.Text = "ID Absensi"
         '
-        'DPWaktu
+        'DPWaktuMasuk
         '
-        Me.DPWaktu.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DPWaktu.Location = New System.Drawing.Point(239, 142)
-        Me.DPWaktu.Name = "DPWaktu"
-        Me.DPWaktu.Size = New System.Drawing.Size(143, 23)
-        Me.DPWaktu.TabIndex = 14
+        Me.DPWaktuMasuk.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.DPWaktuMasuk.Location = New System.Drawing.Point(75, 200)
+        Me.DPWaktuMasuk.Name = "DPWaktuMasuk"
+        Me.DPWaktuMasuk.Size = New System.Drawing.Size(105, 23)
+        Me.DPWaktuMasuk.TabIndex = 14
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(285, 124)
+        Me.Label4.Location = New System.Drawing.Point(87, 182)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(41, 15)
+        Me.Label4.Size = New System.Drawing.Size(79, 15)
         Me.Label4.TabIndex = 13
-        Me.Label4.Text = "Waktu"
+        Me.Label4.Text = "Waktu Masuk"
         '
         'DPTanggal
         '
         Me.DPTanggal.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DPTanggal.Location = New System.Drawing.Point(29, 142)
+        Me.DPTanggal.Location = New System.Drawing.Point(125, 142)
         Me.DPTanggal.Name = "DPTanggal"
         Me.DPTanggal.Size = New System.Drawing.Size(153, 23)
         Me.DPTanggal.TabIndex = 12
@@ -105,44 +104,11 @@ Partial Class StatusAbsensi
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(77, 124)
+        Me.Label2.Location = New System.Drawing.Point(178, 124)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 15)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Tanggal"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.RdnAbsenMasuk)
-        Me.GroupBox1.Controls.Add(Me.RdnAbsenKeluar)
-        Me.GroupBox1.Location = New System.Drawing.Point(102, 192)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(200, 67)
-        Me.GroupBox1.TabIndex = 10
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Jenis Absensi"
-        '
-        'RdnAbsenMasuk
-        '
-        Me.RdnAbsenMasuk.AutoSize = True
-        Me.RdnAbsenMasuk.Location = New System.Drawing.Point(57, 22)
-        Me.RdnAbsenMasuk.Name = "RdnAbsenMasuk"
-        Me.RdnAbsenMasuk.Size = New System.Drawing.Size(96, 19)
-        Me.RdnAbsenMasuk.TabIndex = 8
-        Me.RdnAbsenMasuk.TabStop = True
-        Me.RdnAbsenMasuk.Text = "Absen Masuk"
-        Me.RdnAbsenMasuk.UseVisualStyleBackColor = True
-        '
-        'RdnAbsenKeluar
-        '
-        Me.RdnAbsenKeluar.AutoSize = True
-        Me.RdnAbsenKeluar.Location = New System.Drawing.Point(57, 42)
-        Me.RdnAbsenKeluar.Name = "RdnAbsenKeluar"
-        Me.RdnAbsenKeluar.Size = New System.Drawing.Size(94, 19)
-        Me.RdnAbsenKeluar.TabIndex = 9
-        Me.RdnAbsenKeluar.TabStop = True
-        Me.RdnAbsenKeluar.Text = "Absen Keluar"
-        Me.RdnAbsenKeluar.UseVisualStyleBackColor = True
         '
         'BtnAbsen
         '
@@ -189,6 +155,23 @@ Partial Class StatusAbsensi
         Me.Label1.Text = "# Edit Absensi"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'DPWaktuKeluar
+        '
+        Me.DPWaktuKeluar.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.DPWaktuKeluar.Location = New System.Drawing.Point(238, 200)
+        Me.DPWaktuKeluar.Name = "DPWaktuKeluar"
+        Me.DPWaktuKeluar.Size = New System.Drawing.Size(105, 23)
+        Me.DPWaktuKeluar.TabIndex = 18
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(250, 182)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(77, 15)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "Waktu Keluar"
+        '
         'StatusAbsensi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -201,8 +184,6 @@ Partial Class StatusAbsensi
         Me.Text = "StatusAbsensi"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -210,15 +191,14 @@ Partial Class StatusAbsensi
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DPTanggal As DateTimePicker
     Friend WithEvents Label2 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents RdnAbsenMasuk As RadioButton
-    Friend WithEvents RdnAbsenKeluar As RadioButton
     Friend WithEvents BtnAbsen As Button
     Friend WithEvents CBNamaPegawai As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents DPWaktu As DateTimePicker
+    Friend WithEvents DPWaktuMasuk As DateTimePicker
     Friend WithEvents Label4 As Label
     Friend WithEvents LblIdAbsensi As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents DPWaktuKeluar As DateTimePicker
+    Friend WithEvents Label6 As Label
 End Class

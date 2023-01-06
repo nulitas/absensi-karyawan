@@ -1,7 +1,7 @@
 ﻿Public Class Absensi
     Public Shared absensi As AbsensiClass
 
-    Dim selectedAbsensiId As Integer = 1
+    Dim selectedAbsensiId As Integer = 0
 
     Sub New()
 
@@ -11,6 +11,7 @@
         ' Add any initialization after the InitializeComponent() call.
         absensi = New AbsensiClass
         ReloadDataTable()
+        DataGridViewAbsensi.ClearSelection()
 
     End Sub
 
@@ -32,19 +33,24 @@
 
     Private Sub Absensi_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         ReloadDataTable()
+        DataGridViewAbsensi.ClearSelection()
     End Sub
 
     Private Sub BtnEditAbsensi_Click(sender As Object, e As EventArgs) Handles BtnEditAbsensi.Click
-        Dim selectedAbsen As List(Of String) = absensi.GetDataAbsensiByID(selectedAbsensiId)
+        Try
+            Dim selectedAbsen As List(Of String) = absensi.GetDataAbsensiByID(selectedAbsensiId)
 
-        absensi.GSid_absensi = selectedAbsensiId
-        absensi.GSid_karyawan = selectedAbsen(0)
-        absensi.GStanggal = selectedAbsen(1)
-        absensi.GSwaktu_masuk = selectedAbsen(2)
-        absensi.GSwaktu_keluar = selectedAbsen(3)
+            absensi.GSid_absensi = selectedAbsensiId
+            absensi.GSid_karyawan = selectedAbsen(0)
+            absensi.GStanggal = selectedAbsen(1)
+            absensi.GSwaktu_masuk = selectedAbsen(2)
+            absensi.GSwaktu_keluar = selectedAbsen(3)
 
-        StatusAbsensi.Show()
-        Me.Hide()
+            StatusAbsensi.Show()
+            Me.Hide()
+        Catch ex As Exception
+            MsgBox("Harap pilih baris terlebih dahulu sebelum mengedit!")
+        End Try
 
     End Sub
 
@@ -57,16 +63,20 @@
     End Sub
 
     Private Sub BtnHapusAbsensi_Click(sender As Object, e As EventArgs) Handles BtnHapusAbsensi.Click
-        Dim selectedAbsen As List(Of String) = absensi.GetDataAbsensiByID(selectedAbsensiId)
+        Try
+            Dim selectedAbsen As List(Of String) = absensi.GetDataAbsensiByID(selectedAbsensiId)
 
-        absensi.GSid_absensi = selectedAbsensiId
-        absensi.GSid_karyawan = selectedAbsen(0)
-        absensi.GStanggal = selectedAbsen(1)
-        absensi.GSwaktu_masuk = selectedAbsen(2)
-        absensi.GSwaktu_keluar = selectedAbsen(3)
+            absensi.GSid_absensi = selectedAbsensiId
+            absensi.GSid_karyawan = selectedAbsen(0)
+            absensi.GStanggal = selectedAbsen(1)
+            absensi.GSwaktu_masuk = selectedAbsen(2)
+            absensi.GSwaktu_keluar = selectedAbsen(3)
 
-        HapusAbsensi.Show()
-        Me.Hide()
+            HapusAbsensi.Show()
+            Me.Hide()
+        Catch ex As Exception
+            MsgBox("Harap pilih baris terlebih dahulu sebelum menghapus!")
+        End Try
 
     End Sub
 End Class

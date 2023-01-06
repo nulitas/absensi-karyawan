@@ -90,6 +90,7 @@ Public Class AbsensiClass
             Return result
 
         Catch ex As Exception
+            dbConn.Close()
             MsgBox(ex.Message)
         Finally
             dbConn.Dispose()
@@ -128,7 +129,7 @@ Public Class AbsensiClass
             Return result
 
         Catch ex As Exception
-
+            dbConn.Close()
             MsgBox(ex.Message)
 
         Finally
@@ -171,7 +172,8 @@ Public Class AbsensiClass
         'End Try
     End Sub
 
-    Sub UpdateDataAbsensi(id_karyawan As Integer,
+    Sub UpdateDataAbsensi(id As Integer,
+                          id_karyawan As Integer,
                           tanggal As Date,
                           absen_masuk As String,
                           absen_keluar As String)
@@ -188,7 +190,7 @@ Public Class AbsensiClass
                         ", tanggal='" & stringTanggal &
                         "', waktu_absen_masuk=" & absen_masuk &
                         ", waktu_absen_keluar=" & absen_keluar & " " &
-                        "WHERE id_absensi=" & id_absensi & ";"
+                        "WHERE id_absensi=" & id & ";"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
 
@@ -219,6 +221,7 @@ Public Class AbsensiClass
             dbConn.Close()
             sqlRead.Close()
         Catch ex As Exception
+            dbConn.Close()
             MsgBox(ex.Message)
         Finally
             dbConn.Dispose()
@@ -229,21 +232,28 @@ Public Class AbsensiClass
     Public Function CheckEmployee(id_karyawan As Integer, nama As String) As Boolean
         dbConn.ConnectionString = "server =" + server + ";user id =" + username _
                                  + ";password =" + password + ";database =" + database
-        dbConn.Open()
-        sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT nik FROM karyawan WHERE nama='" & nama &
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlCommand.CommandText = "SELECT nik FROM karyawan WHERE nama='" & nama &
                                      "' AND id_karyawan=" & id_karyawan
-        sqlRead = sqlCommand.ExecuteReader
+            sqlRead = sqlCommand.ExecuteReader
 
-        If Not sqlRead.HasRows Then
-            MsgBox("ID Karyawan dengan nama tidak sesuai!")
-            Return False
-        End If
+            If Not sqlRead.HasRows Then
+                MsgBox("ID Karyawan dengan nama tidak sesuai!")
+                sqlRead.Close()
+                dbConn.Close()
+                Return False
+            End If
 
-        sqlRead.Close()
-        dbConn.Close()
+            sqlRead.Close()
+            dbConn.Close()
 
-        Return True
+            Return True
+        Catch ex As Exception
+            dbConn.Close()
+            MsgBox(ex.Message)
+        End Try
         'Try
 
 
@@ -274,6 +284,7 @@ Public Class AbsensiClass
             Return result
 
         Catch ex As Exception
+            dbConn.Close()
             MsgBox(ex.Message)
         Finally
             dbConn.Dispose()
@@ -299,6 +310,7 @@ Public Class AbsensiClass
             dbConn.Close()
             Return result
         Catch ex As Exception
+            dbConn.Close()
             MsgBox(ex.Message)
             Return ex.Message
         Finally
@@ -326,11 +338,43 @@ Public Class AbsensiClass
 
             Return id
         Catch ex As Exception
+            dbConn.Close()
             MsgBox(ex.Message)
             Return ex.Message
         Finally
             dbConn.Dispose()
 
+        End Try
+    End Function
+
+    Function CheckOnAbsenKeluar(id_pegawai As Integer) As Integer
+        Dim id_absen = -1
+        dbConn.ConnectionString = "server =" + server + ";user id =" + username _
+                            + ";password =" + password + ";database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+
+            sqlQuery = "SELECT id_absensi FROM absensi WHERE id_karyawan=" & id_pegawai &
+                                     " AND tanggal='" &
+                                     Date.Today.Year & "-" & Date.Today.Month & "-" & Date.Today.Day &
+                                     "';"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader()
+            sqlRead.Read()
+            If sqlRead.HasRows Then
+                id_absen = sqlRead.GetInt32(0)
+            End If
+            dbConn.Close()
+            sqlRead.Close()
+            Return id_absen
+
+        Catch ex As Exception
+            dbConn.Close()
+            MsgBox(ex.Message)
+        Finally
+            dbConn.Dispose()
         End Try
     End Function
 
