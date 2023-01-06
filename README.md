@@ -1,4 +1,4 @@
-<h2 style="font-weight: 700; font-size: 2rem">SISTEM PENITIPAN BARANG</h2>
+<h2 style="font-weight: 700; font-size: 2rem">Sistem Absensi Karyawan</h2>
 
 <br>
 Project UAS Visual Basic Semester 3
