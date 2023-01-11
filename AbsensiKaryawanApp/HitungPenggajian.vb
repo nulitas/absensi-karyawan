@@ -27,7 +27,7 @@ Public Class HitungPenggajian
 
         CBIdPegawai.DataSource = Penggajian.penggajian.GetListKaryawan()
         CBBulan.DataSource = Penggajian.penggajian.GetMonthDate()
-        CBGaji.DataSource = Penggajian.penggajian.GetGajiKaryawan()
+        CBGaji.DataSource = Penggajian.penggajian.GetGajiKaryawan(9)
     End Sub
 
     Private Sub BtnHitungGaji_Click(sender As Object, e As EventArgs) Handles BtnHitungGaji.Click
