@@ -1,5 +1,8 @@
 ﻿Imports Microsoft.SqlServer
 Imports MySql.Data.MySqlClient
+Imports Mysqlx
+Imports System.Runtime.CompilerServices
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 
 Public Class HitungPenggajian
@@ -21,30 +24,40 @@ Public Class HitungPenggajian
         ' Add any initialization after the InitializeComponent() call.
         GetKaryawanList()
 
+
     End Sub
 
     Public Sub GetKaryawanList()
 
-        CBIdPegawai.DataSource = Penggajian.penggajian.GetListKaryawan()
+        'CBIdPegawai.DataSource = Penggajian.penggajian.GetListKaryawan()
+
         CBBulan.DataSource = Penggajian.penggajian.GetMonthDate()
         'CBGaji.DataSource = Penggajian.penggajian.GetGajiKaryawan(9)
 
         TxtGaji.Text = Penggajian.penggajian.GetGajiKaryawan(9)
     End Sub
 
-    Private Sub BtnHitungGaji_Click(sender As Object, e As EventArgs) Handles BtnHitungGaji.Click
 
-        Dim potongan = 1000 * (2 / 100)
-        Dim total = 1000 - potongan
-        TxtTotalGaji.Text = total
-
-        Penggajian.penggajian.GSTotalGaji = TxtTotalGaji.Text
-    End Sub
     Private Sub HitungPenggajian_Load(sender As Object, e As EventArgs) Handles Me.Load
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
 
 
         Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlCommand.CommandText = "SELECT id_karyawan from karyawan"
+
+
+            da.SelectCommand = sqlCommand
+
+            Dim table1 As New DataTable
+
+            da.Fill(table1)
+
+
+            CBIdPegawai.DataSource = table1
+            CBIdPegawai.DisplayMember = "id_karyawan"
+            CBIdPegawai.ValueMember = "id_karyawan"
 
         Catch ex As Exception
 
@@ -55,7 +68,70 @@ Public Class HitungPenggajian
 
     End Sub
 
-    Private Sub HitungPenggajian_Activated(sender As Object, e As EventArgs) Handles Me.Activated
 
+    'Private Sub BtnGetGaji_Click(sender As Object, e As EventArgs)
+
+    '    dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
+
+    '    Try
+    '        dbConn.Open()
+    '        sqlCommand.Connection = dbConn
+    '        sqlCommand.CommandText = " SELECT jabatan.gaji_perhari FROM karyawan INNER JOIN jabatan ON jabatan.id_jabatan = karyawan.id_jabatan WHERE karyawan.id_karyawan =" & CBIdPegawai.SelectedValue & ";"
+
+    '        da.SelectCommand = sqlCommand
+
+    '        Dim table1 As New DataTable
+
+    '        da.Fill(table1)
+    '        TxtGaji.Text = table1(0)(0)
+
+
+    '    Catch ex As Exception
+
+    '    Finally
+    '        dbConn.Dispose()
+    '    End Try
+
+    'End Sub
+
+    Private Sub CBIdPegawai_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBIdPegawai.SelectedIndexChanged
+        'dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
+
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlCommand.CommandText = " SELECT jabatan.gaji_perhari FROM karyawan INNER JOIN jabatan ON jabatan.id_jabatan = karyawan.id_jabatan WHERE karyawan.id_karyawan =" & CBIdPegawai.SelectedValue & ";"
+
+            da.SelectCommand = sqlCommand
+
+            Dim table1 As New DataTable
+
+            da.Fill(table1)
+            TxtGaji.Text = table1(0)(0)
+
+
+
+        Catch ex As Exception
+
+        Finally
+            dbConn.Dispose()
+        End Try
     End Sub
+
+
+
+    Private Sub BtnHitungGaji_Click(sender As Object, e As EventArgs) Handles BtnHitungGaji.Click
+        'ini kondisi kalo lewat jam 9
+        Dim potongan = TxtGaji.Text * (2 / 100)
+        Dim total = TxtGaji.Text - potongan
+        TxtTotalGaji.Text = total
+
+        Penggajian.penggajian.GSTotalGaji = TxtTotalGaji.Text
+        Penggajian.penggajian.GSBulan = CBBulan.SelectedValue
+        Penggajian.penggajian.GSIdKaryawan = CBIdPegawai.SelectedValue
+
+        Penggajian.penggajian.AddDataPenggajian(Penggajian.penggajian.GSIdKaryawan, Penggajian.penggajian.GSBulan, Penggajian.penggajian.GSTotalGaji)
+    End Sub
+
+
 End Class

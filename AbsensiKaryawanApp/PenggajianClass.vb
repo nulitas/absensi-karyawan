@@ -90,6 +90,31 @@ Public Class PenggajianClass
     End Function
 
 
+    Public Function AddDataPenggajian(data_id_karyawan As String, data_bulan_ke As Integer, data_total_gaji As Double)
+        dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
+
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "INSERT INTO penggajian (id_karyawan, bulan_ke, total_gaji) VALUE('" _
+                        & data_id_karyawan & "', '" _
+                        & data_bulan_ke & "', '" _
+                        & data_total_gaji & "')"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+            dbConn.Close()
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
 
 
     Public Function GetDataPenggajian() As DataTable

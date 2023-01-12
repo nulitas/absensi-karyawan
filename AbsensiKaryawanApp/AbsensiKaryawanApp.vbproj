@@ -5,7 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
 
 
-    <StartupObject>AbsensiKaryawanApp.AbsensiKaryawan</StartupObject>
+    <StartupObject>AbsensiKaryawanApp.Penggajian</StartupObject>
 
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
