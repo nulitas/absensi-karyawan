@@ -27,7 +27,9 @@ Public Class HitungPenggajian
 
         CBIdPegawai.DataSource = Penggajian.penggajian.GetListKaryawan()
         CBBulan.DataSource = Penggajian.penggajian.GetMonthDate()
-        CBGaji.DataSource = Penggajian.penggajian.GetGajiKaryawan(9)
+        'CBGaji.DataSource = Penggajian.penggajian.GetGajiKaryawan(9)
+
+        TxtGaji.Text = Penggajian.penggajian.GetGajiKaryawan(9)
     End Sub
 
     Private Sub BtnHitungGaji_Click(sender As Object, e As EventArgs) Handles BtnHitungGaji.Click
@@ -43,9 +45,6 @@ Public Class HitungPenggajian
 
 
         Try
-
-
-
 
         Catch ex As Exception
 

@@ -11,7 +11,7 @@
         TxtPassword.UseSystemPasswordChar = True
 
 
-        AbsensiKaryawan = New AbsensiKaryawan
+        'AbsensiKaryawan = New AbsensiKaryawan
         Users = New Users
     End Sub
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
@@ -23,7 +23,7 @@
         If data_user.Count > 0 Then
             Users.GSusername = data_user(1)
             Me.Hide()
-            AbsensiKaryawan.Show()
+            AdminDashboard.Show()
         Else
             MessageBox.Show("Error!")
         End If
@@ -35,5 +35,7 @@
 
     End Sub
 
-
+    Private Sub Login_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        'AbsensiKaryawan.Show()
+    End Sub
 End Class

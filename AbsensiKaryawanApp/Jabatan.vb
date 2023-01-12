@@ -49,7 +49,7 @@
     End Sub
 
     Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
-        AbsensiKaryawan.Show()
+        AdminDashboard.Show()
         Me.Hide()
     End Sub
 End Class

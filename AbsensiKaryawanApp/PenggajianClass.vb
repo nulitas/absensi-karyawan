@@ -75,19 +75,17 @@ Public Class PenggajianClass
 
 
     Public Function GetGajiKaryawan(ID As Integer)
-        Dim result As New List(Of String)
+
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlCommand.CommandText = "SELECT jabatan.gaji_perhari FROM karyawan INNER JOIN jabatan ON jabatan.id_jabatan = karyawan.id_jabatan WHERE karyawan.id_jabatan = " & ID & ";"
         sqlRead = sqlCommand.ExecuteReader
         sqlRead.Read()
-        If sqlRead.HasRows Then
-            result.Add(sqlRead.GetString(0))
-        End If
+
         sqlRead.Close()
         dbConn.Close()
-        Return result
+
 
     End Function
 
