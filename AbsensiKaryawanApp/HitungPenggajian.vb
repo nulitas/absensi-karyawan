@@ -128,7 +128,10 @@ Public Class HitungPenggajian
         Dim lateDay = Penggajian.penggajian.GetLateDay(Penggajian.penggajian.GSBulan)
 
         Dim potongan = TxtGaji.Text * (2 / 100)
-        Dim total = (Day * TxtGaji.Text) + (lateDay * potongan)
+        Dim total = Day * TxtGaji.Text
+        If lateDay > 0 Then 
+            total -= potongan
+        End If
         TxtTotalGaji.Text = total
 
         Penggajian.penggajian.GSTotalGaji = TxtTotalGaji.Text
