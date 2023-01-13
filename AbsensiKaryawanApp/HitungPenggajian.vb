@@ -122,12 +122,16 @@ Public Class HitungPenggajian
 
     Private Sub BtnHitungGaji_Click(sender As Object, e As EventArgs) Handles BtnHitungGaji.Click
         'ini kondisi kalo lewat jam 9
+        Penggajian.penggajian.GSBulan = CBBulan.SelectedValue
+
+        Dim Day = Penggajian.penggajian.getDayCount(Penggajian.penggajian.GSBulan)
+        Dim lateDay = Penggajian.penggajian.GetLateDay(Penggajian.penggajian.GSBulan)
+
         Dim potongan = TxtGaji.Text * (2 / 100)
-        Dim total = TxtGaji.Text - potongan
+        Dim total = (Day * TxtGaji.Text) + (lateDay * potongan)
         TxtTotalGaji.Text = total
 
         Penggajian.penggajian.GSTotalGaji = TxtTotalGaji.Text
-        Penggajian.penggajian.GSBulan = CBBulan.SelectedValue
         Penggajian.penggajian.GSIdKaryawan = CBIdPegawai.SelectedValue
 
         Penggajian.penggajian.AddDataPenggajian(Penggajian.penggajian.GSIdKaryawan, Penggajian.penggajian.GSBulan, Penggajian.penggajian.GSTotalGaji)
