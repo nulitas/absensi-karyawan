@@ -164,8 +164,7 @@ Public Class PenggajianClass
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "SELECT count(*) FROM absensi WHERE tanggal REGEXP '" & Month & "' 
-                        AND waktu_masuk < 09:00:00;"
+            sqlQuery = "SELECT count(*) FROM absensi WHERE tanggal REGEXP '" & Month & "';"
 
             sqlCommand = new MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
