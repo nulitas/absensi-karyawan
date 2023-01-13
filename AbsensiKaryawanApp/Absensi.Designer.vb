@@ -26,7 +26,6 @@ Partial Class Absensi
         Me.DataGridViewAbsensi = New System.Windows.Forms.DataGridView()
         Me.BtnHapusAbsensi = New System.Windows.Forms.Button()
         Me.BtnEditAbsensi = New System.Windows.Forms.Button()
-        Me.BtnAbsenMasuk = New System.Windows.Forms.Button()
         Me.BtnKembali = New System.Windows.Forms.Button()
         CType(Me.DataGridViewAbsensi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,22 +82,6 @@ Partial Class Absensi
         Me.BtnEditAbsensi.Text = "Edit"
         Me.BtnEditAbsensi.UseVisualStyleBackColor = False
         '
-        'BtnAbsenMasuk
-        '
-        Me.BtnAbsenMasuk.BackColor = System.Drawing.SystemColors.Highlight
-        Me.BtnAbsenMasuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAbsenMasuk.Font = New System.Drawing.Font("Myanmar Text", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.BtnAbsenMasuk.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnAbsenMasuk.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAbsenMasuk.Location = New System.Drawing.Point(290, 340)
-        Me.BtnAbsenMasuk.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BtnAbsenMasuk.Name = "BtnAbsenMasuk"
-        Me.BtnAbsenMasuk.Size = New System.Drawing.Size(287, 33)
-        Me.BtnAbsenMasuk.TabIndex = 8
-        Me.BtnAbsenMasuk.Text = "Absen"
-        Me.BtnAbsenMasuk.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAbsenMasuk.UseVisualStyleBackColor = False
-        '
         'BtnKembali
         '
         Me.BtnKembali.BackColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -119,7 +102,6 @@ Partial Class Absensi
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(589, 454)
         Me.Controls.Add(Me.BtnKembali)
-        Me.Controls.Add(Me.BtnAbsenMasuk)
         Me.Controls.Add(Me.BtnEditAbsensi)
         Me.Controls.Add(Me.BtnHapusAbsensi)
         Me.Controls.Add(Me.DataGridViewAbsensi)
@@ -136,6 +118,5 @@ Partial Class Absensi
     Friend WithEvents DataGridViewAbsensi As DataGridView
     Friend WithEvents BtnHapusAbsensi As Button
     Friend WithEvents BtnEditAbsensi As Button
-    Friend WithEvents BtnAbsenMasuk As Button
     Friend WithEvents BtnKembali As Button
 End Class

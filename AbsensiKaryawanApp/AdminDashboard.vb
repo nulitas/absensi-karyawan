@@ -25,4 +25,9 @@
         Me.Close()
         AbsensiKaryawan.Show()
     End Sub
+
+    Private Sub BtnDataAbsensi_Click(sender As Object, e As EventArgs) Handles BtnDataAbsensi.Click
+        Absensi.Show()
+        Me.Hide()
+    End Sub
 End Class

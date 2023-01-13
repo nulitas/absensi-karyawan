@@ -2,7 +2,7 @@
 
 
     Private Sub BtnFormAbsensi_Click(sender As Object, e As EventArgs) Handles BtnFormAbsensi.Click
-        Absensi.Show()
+        FormAbsensi.Show()
         'Me.Hide()
     End Sub
 

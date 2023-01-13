@@ -6,13 +6,16 @@
     Dim id_karyawan
     Dim id_absen
 
+    Dim absensi As AbsensiClass
+
     Sub New()
 
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        CBNamaPegawai.DataSource = Absensi.absensi.GetEmployeesNameList()
+        absensi = New AbsensiClass
+        CBNamaPegawai.DataSource = absensi.GetEmployeesNameList()
     End Sub
 
     Private Sub BtnAbsen_Click(sender As Object, e As EventArgs) Handles BtnAbsen.Click
@@ -23,29 +26,29 @@
         Dim stringMasuk As String = "NULL"
         Dim stringKeluar As String = "NULL"
 
-        If Absensi.absensi.CheckEmployee(employeeId, selectedEmployee) Then
+        If absensi.CheckEmployee(employeeId, selectedEmployee) Then
             If RdnAbsenMasuk.Checked Then
 
                 stringMasuk = "'" & waktu_masuk.Hour & ":" &
                               waktu_masuk.Minute & ":" & waktu_masuk.Second & "'"
-                Absensi.absensi.AddDataAbsen(employeeId, Date.Today, stringMasuk, stringKeluar)
+                absensi.AddDataAbsen(employeeId, Date.Today, stringMasuk, stringKeluar)
             ElseIf RdnAbsenKeluar.Checked Then
-                Dim datalist = Absensi.absensi.GetDataAbsensiByID(id_absen)
+                Dim datalist = absensi.GetDataAbsensiByID(id_absen)
 
                 stringMasuk = "'" & Date.Today.Year & "-" & Date.Today.Month & "-" &
                               Date.Today.Day & " " & datalist(2) & "'"
 
                 stringKeluar = "'" & waktu_keluar.Hour & ":" &
                                waktu_keluar.Minute & ":" & waktu_keluar.Second & "'"
-                Absensi.absensi.UpdateDataAbsensi(id_absen, id_karyawan, Date.Today, stringMasuk, stringKeluar)
+                absensi.UpdateDataAbsensi(id_absen, id_karyawan, Date.Today, stringMasuk, stringKeluar)
             End If
             Me.Close()
-            Absensi.Show()
+            AbsensiKaryawan.Show()
         End If
     End Sub
 
     Private Sub FormAbsensi_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        Absensi.Show()
+        AbsensiKaryawan.Show()
 
     End Sub
 
@@ -56,10 +59,10 @@
     End Sub
 
     Private Sub CBNamaPegawai_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBNamaPegawai.SelectedIndexChanged
-        id_karyawan = Absensi.absensi.GetEmployyeIDByName(CBNamaPegawai.SelectedItem)
-        id_absen = Absensi.absensi.CheckOnAbsenKeluar(id_karyawan)
+        id_karyawan = absensi.GetEmployyeIDByName(CBNamaPegawai.SelectedItem)
+        id_absen = absensi.CheckOnAbsenKeluar(id_karyawan)
         'MsgBox(id_absen)
-        Dim listdata = Absensi.absensi.GetDataAbsensiByID(id_absen)
+        Dim listdata = absensi.GetDataAbsensiByID(id_absen)
 
         If id_absen > 0 Then
             RdnAbsenMasuk.Enabled = False
