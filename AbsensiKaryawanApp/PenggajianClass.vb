@@ -160,21 +160,21 @@ Public Class PenggajianClass
     End Function
 
     Public Function getDayCount(Month As Integer) As Integer
-        Dim result as Integer = 0
+        Dim result As Integer = 0
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "SELECT count(*) FROM absensi WHERE tanggal REGEXP '" & Month & "';"
 
-            sqlCommand = new MySqlCommand(sqlQuery, dbConn)
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
             sqlRead.Read()
             result = sqlRead.GetString(0)
 
-            dbConn.close()
-            sqlRead.close()
+            dbConn.Close()
+            sqlRead.Close()
 
-            return result
+            Return result
         Catch ex As Exception
             dbConn.Close()
             MsgBox(ex.Message)
@@ -184,22 +184,22 @@ Public Class PenggajianClass
     End Function
 
     Public Function GetLateDay(Month As Integer) As Integer
-        Dim result as Integer = 0
+        Dim result As Integer = 0
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "SELECT count(*) FROM absensi WHERE tanggal REGEXP '" & Month & "' 
-                        AND waktu_masuk > 09:00:00;"
+                        AND waktu_absen_masuk > '09:00:00';"
 
-            sqlCommand = new MySqlCommand(sqlQuery, dbConn)
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
             sqlRead.Read()
             result = sqlRead.GetString(0)
 
-            dbConn.close()
-            sqlRead.close()
+            dbConn.Close()
+            sqlRead.Close()
 
-            return result
+            Return result
         Catch ex As Exception
             dbConn.Close()
             MsgBox(ex.Message)

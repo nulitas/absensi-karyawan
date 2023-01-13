@@ -129,7 +129,7 @@ Public Class HitungPenggajian
 
         Dim potongan = TxtGaji.Text * (2 / 100)
         Dim total = Day * TxtGaji.Text
-        If lateDay > 0 Then 
+        If lateDay > 0 Then
             total -= (lateDay * potongan)
         End If
         TxtTotalGaji.Text = total
