@@ -22,12 +22,17 @@
     End Sub
 
     Private Sub BtnLogout_Click(sender As Object, e As EventArgs) Handles BtnLogout.Click
-        Me.Close()
+
         AbsensiKaryawan.Show()
+        Me.Hide()
     End Sub
 
     Private Sub BtnDataAbsensi_Click(sender As Object, e As EventArgs) Handles BtnDataAbsensi.Click
         Absensi.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub AdminDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.CenterToScreen()
     End Sub
 End Class

@@ -23,6 +23,7 @@ Partial Class HitungPenggajian
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LblNamaPegawai = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtGaji = New System.Windows.Forms.TextBox()
@@ -31,17 +32,15 @@ Partial Class HitungPenggajian
         Me.CBIdPegawai = New System.Windows.Forms.ComboBox()
         Me.BtnHitungGaji = New System.Windows.Forms.Button()
         Me.CBBulan = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.LblNamaPegawai = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.LblNamaPegawai)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.TxtGaji)
@@ -50,18 +49,25 @@ Partial Class HitungPenggajian
         Me.Panel1.Controls.Add(Me.CBIdPegawai)
         Me.Panel1.Controls.Add(Me.BtnHitungGaji)
         Me.Panel1.Controls.Add(Me.CBBulan)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Location = New System.Drawing.Point(42, 69)
+        Me.Panel1.Location = New System.Drawing.Point(12, 13)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(498, 465)
+        Me.Panel1.Size = New System.Drawing.Size(889, 478)
         Me.Panel1.TabIndex = 4
+        '
+        'LblNamaPegawai
+        '
+        Me.LblNamaPegawai.AutoSize = True
+        Me.LblNamaPegawai.Location = New System.Drawing.Point(239, 107)
+        Me.LblNamaPegawai.Name = "LblNamaPegawai"
+        Me.LblNamaPegawai.Size = New System.Drawing.Size(117, 20)
+        Me.LblNamaPegawai.TabIndex = 5
+        Me.LblNamaPegawai.Text = "Nama Karyawan"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(55, 156)
+        Me.Label5.Location = New System.Drawing.Point(239, 153)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 20)
         Me.Label5.TabIndex = 14
@@ -70,7 +76,7 @@ Partial Class HitungPenggajian
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(55, 226)
+        Me.Label4.Location = New System.Drawing.Point(239, 227)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(72, 20)
         Me.Label4.TabIndex = 13
@@ -78,14 +84,15 @@ Partial Class HitungPenggajian
         '
         'TxtGaji
         '
-        Me.TxtGaji.Location = New System.Drawing.Point(139, 153)
+        Me.TxtGaji.Enabled = False
+        Me.TxtGaji.Location = New System.Drawing.Point(362, 150)
         Me.TxtGaji.Name = "TxtGaji"
         Me.TxtGaji.Size = New System.Drawing.Size(245, 27)
         Me.TxtGaji.TabIndex = 11
         '
         'TxtTotalGaji
         '
-        Me.TxtTotalGaji.Location = New System.Drawing.Point(139, 223)
+        Me.TxtTotalGaji.Location = New System.Drawing.Point(362, 227)
         Me.TxtTotalGaji.Name = "TxtTotalGaji"
         Me.TxtTotalGaji.Size = New System.Drawing.Size(245, 27)
         Me.TxtTotalGaji.TabIndex = 10
@@ -93,7 +100,7 @@ Partial Class HitungPenggajian
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(55, 188)
+        Me.Label1.Location = New System.Drawing.Point(239, 189)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(67, 20)
         Me.Label1.TabIndex = 9
@@ -105,7 +112,7 @@ Partial Class HitungPenggajian
         Me.CBIdPegawai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBIdPegawai.FormattingEnabled = True
         Me.CBIdPegawai.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.CBIdPegawai.Location = New System.Drawing.Point(139, 103)
+        Me.CBIdPegawai.Location = New System.Drawing.Point(362, 104)
         Me.CBIdPegawai.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CBIdPegawai.Name = "CBIdPegawai"
         Me.CBIdPegawai.Size = New System.Drawing.Size(245, 28)
@@ -116,7 +123,7 @@ Partial Class HitungPenggajian
         Me.BtnHitungGaji.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BtnHitungGaji.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnHitungGaji.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnHitungGaji.Location = New System.Drawing.Point(139, 289)
+        Me.BtnHitungGaji.Location = New System.Drawing.Point(362, 282)
         Me.BtnHitungGaji.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnHitungGaji.Name = "BtnHitungGaji"
         Me.BtnHitungGaji.Size = New System.Drawing.Size(246, 46)
@@ -130,47 +137,20 @@ Partial Class HitungPenggajian
         Me.CBBulan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBBulan.FormattingEnabled = True
         Me.CBBulan.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.CBBulan.Location = New System.Drawing.Point(139, 188)
+        Me.CBBulan.Location = New System.Drawing.Point(362, 189)
         Me.CBBulan.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CBBulan.Name = "CBBulan"
         Me.CBBulan.Size = New System.Drawing.Size(245, 28)
         Me.CBBulan.TabIndex = 6
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(50, 106)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 20)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "ID Pegawai"
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.LblNamaPegawai)
-        Me.Panel2.Location = New System.Drawing.Point(143, 61)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(144, 33)
-        Me.Panel2.TabIndex = 6
-        '
-        'LblNamaPegawai
-        '
-        Me.LblNamaPegawai.AutoSize = True
-        Me.LblNamaPegawai.Location = New System.Drawing.Point(11, 7)
-        Me.LblNamaPegawai.Name = "LblNamaPegawai"
-        Me.LblNamaPegawai.Size = New System.Drawing.Size(119, 20)
-        Me.LblNamaPegawai.TabIndex = 5
-        Me.LblNamaPegawai.Text = "NAMA PEGAWAI"
         '
         'Label3
         '
         Me.Label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label3.Font = New System.Drawing.Font("Myanmar Text", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label3.Location = New System.Drawing.Point(42, 20)
+        Me.Label3.Location = New System.Drawing.Point(-1, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(498, 40)
+        Me.Label3.Size = New System.Drawing.Size(889, 40)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "# Form Hitung Gaji"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -179,15 +159,12 @@ Partial Class HitungPenggajian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(586, 547)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(913, 504)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "HitungPenggajian"
         Me.Text = "HitungPenggajian"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -196,10 +173,8 @@ Partial Class HitungPenggajian
     Friend WithEvents BtnHitungGaji As Button
     Friend WithEvents CBBulan As ComboBox
     Friend WithEvents LblNamaPegawai As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents CBIdPegawai As ComboBox
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents TxtTotalGaji As TextBox
     Friend WithEvents TxtGaji As TextBox

@@ -30,6 +30,7 @@ Partial Class TambahKaryawan
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.BtnUploadFoto = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.CBJabatan = New System.Windows.Forms.ComboBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -38,7 +39,6 @@ Partial Class TambahKaryawan
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -126,8 +126,19 @@ Partial Class TambahKaryawan
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(764, 426)
+        Me.Panel1.Size = New System.Drawing.Size(889, 480)
         Me.Panel1.TabIndex = 11
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label4.Font = New System.Drawing.Font("Myanmar Text", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label4.Location = New System.Drawing.Point(-1, -1)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(889, 56)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "# Tambah Karyawan"
         '
         'CBJabatan
         '
@@ -201,22 +212,11 @@ Partial Class TambahKaryawan
         Me.Panel3.Size = New System.Drawing.Size(194, 36)
         Me.Panel3.TabIndex = 12
         '
-        'Label4
-        '
-        Me.Label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Font = New System.Drawing.Font("Myanmar Text", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label4.Location = New System.Drawing.Point(-1, -1)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(764, 56)
-        Me.Label4.TabIndex = 16
-        Me.Label4.Text = "# Tambah Karyawan"
-        '
         'TambahKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(913, 504)
         Me.Controls.Add(Me.TxtNik)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "TambahKaryawan"

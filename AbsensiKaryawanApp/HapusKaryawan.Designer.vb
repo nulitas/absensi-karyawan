@@ -35,9 +35,9 @@ Partial Class HapusKaryawan
         '
         Me.LblHapusKaryawan.AutoSize = True
         Me.LblHapusKaryawan.Font = New System.Drawing.Font("Myanmar Text", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblHapusKaryawan.Location = New System.Drawing.Point(225, 144)
+        Me.LblHapusKaryawan.Location = New System.Drawing.Point(359, 146)
         Me.LblHapusKaryawan.Name = "LblHapusKaryawan"
-        Me.LblHapusKaryawan.Size = New System.Drawing.Size(129, 60)
+        Me.LblHapusKaryawan.Size = New System.Drawing.Size(126, 58)
         Me.LblHapusKaryawan.TabIndex = 0
         Me.LblHapusKaryawan.Text = "Label1"
         '
@@ -47,7 +47,7 @@ Partial Class HapusKaryawan
         Me.BtnHapusKaryawan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnHapusKaryawan.Font = New System.Drawing.Font("Myanmar Text", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnHapusKaryawan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnHapusKaryawan.Location = New System.Drawing.Point(140, 258)
+        Me.BtnHapusKaryawan.Location = New System.Drawing.Point(464, 324)
         Me.BtnHapusKaryawan.Name = "BtnHapusKaryawan"
         Me.BtnHapusKaryawan.Size = New System.Drawing.Size(130, 48)
         Me.BtnHapusKaryawan.TabIndex = 1
@@ -58,7 +58,7 @@ Partial Class HapusKaryawan
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Myanmar Text", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(82, 78)
+        Me.Label1.Location = New System.Drawing.Point(189, 77)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(455, 41)
         Me.Label1.TabIndex = 2
@@ -70,7 +70,7 @@ Partial Class HapusKaryawan
         Me.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCancel.Font = New System.Drawing.Font("Myanmar Text", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnCancel.Location = New System.Drawing.Point(307, 258)
+        Me.BtnCancel.Location = New System.Drawing.Point(271, 324)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(130, 48)
         Me.BtnCancel.TabIndex = 3
@@ -87,7 +87,7 @@ Partial Class HapusKaryawan
         Me.Panel1.Controls.Add(Me.LblHapusKaryawan)
         Me.Panel1.Location = New System.Drawing.Point(17, 13)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(617, 375)
+        Me.Panel1.Size = New System.Drawing.Size(884, 479)
         Me.Panel1.TabIndex = 4
         '
         'Label2
@@ -97,7 +97,7 @@ Partial Class HapusKaryawan
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(617, 56)
+        Me.Label2.Size = New System.Drawing.Size(879, 56)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "# Hapus Karyawan"
         '
@@ -105,7 +105,7 @@ Partial Class HapusKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(656, 409)
+        Me.ClientSize = New System.Drawing.Size(913, 504)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "HapusKaryawan"
         Me.Text = "HapusKaryawan"

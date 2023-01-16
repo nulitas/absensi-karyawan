@@ -57,4 +57,8 @@
         Me.Close()
         Absensi.Show()
     End Sub
+
+    Private Sub StatusAbsensi_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.CenterToScreen()
+    End Sub
 End Class

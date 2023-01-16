@@ -52,4 +52,12 @@
         Me.Close()
         AdminDashboard.Show()
     End Sub
+
+    Private Sub Penggajian_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.CenterToScreen()
+    End Sub
+
+    Private Sub Penggajian_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        AdminDashboard.Show()
+    End Sub
 End Class

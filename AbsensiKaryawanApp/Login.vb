@@ -38,4 +38,8 @@
     Private Sub Login_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         'AbsensiKaryawan.Show()
     End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.CenterToScreen()
+    End Sub
 End Class

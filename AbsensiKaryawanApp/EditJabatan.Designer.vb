@@ -47,7 +47,7 @@ Partial Class EditJabatan
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(515, 461)
+        Me.Panel1.Size = New System.Drawing.Size(889, 480)
         Me.Panel1.TabIndex = 6
         '
         'Label3
@@ -57,7 +57,7 @@ Partial Class EditJabatan
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label3.Location = New System.Drawing.Point(-1, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(515, 48)
+        Me.Label3.Size = New System.Drawing.Size(889, 48)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "# Edit Jabatan"
         '
@@ -65,7 +65,7 @@ Partial Class EditJabatan
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.TxtNamaJabatan)
-        Me.Panel3.Location = New System.Drawing.Point(154, 151)
+        Me.Panel3.Location = New System.Drawing.Point(361, 147)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(264, 39)
         Me.Panel3.TabIndex = 8
@@ -83,7 +83,7 @@ Partial Class EditJabatan
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(37, 160)
+        Me.Label4.Location = New System.Drawing.Point(244, 156)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(104, 20)
         Me.Label4.TabIndex = 0
@@ -92,7 +92,7 @@ Partial Class EditJabatan
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(37, 227)
+        Me.Label5.Location = New System.Drawing.Point(244, 223)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(69, 20)
         Me.Label5.TabIndex = 1
@@ -103,7 +103,7 @@ Partial Class EditJabatan
         Me.BtnEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BtnEdit.Font = New System.Drawing.Font("Myanmar Text", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnEdit.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.BtnEdit.Location = New System.Drawing.Point(270, 290)
+        Me.BtnEdit.Location = New System.Drawing.Point(477, 286)
         Me.BtnEdit.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BtnEdit.Name = "BtnEdit"
         Me.BtnEdit.Size = New System.Drawing.Size(144, 46)
@@ -115,7 +115,7 @@ Partial Class EditJabatan
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.TxtGaji)
-        Me.Panel2.Location = New System.Drawing.Point(154, 217)
+        Me.Panel2.Location = New System.Drawing.Point(361, 213)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(264, 39)
         Me.Panel2.TabIndex = 7
@@ -134,7 +134,7 @@ Partial Class EditJabatan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(540, 485)
+        Me.ClientSize = New System.Drawing.Size(913, 504)
         Me.Controls.Add(Me.Panel1)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "EditJabatan"

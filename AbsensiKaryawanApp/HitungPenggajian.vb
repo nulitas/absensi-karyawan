@@ -41,11 +41,11 @@ Public Class HitungPenggajian
     Private Sub HitungPenggajian_Load(sender As Object, e As EventArgs) Handles Me.Load
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
 
-
+        Me.CenterToScreen()
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlCommand.CommandText = "SELECT id_karyawan from karyawan"
+            sqlCommand.CommandText = "SELECT id_karyawan, nama from karyawan"
 
 
             da.SelectCommand = sqlCommand
@@ -56,8 +56,11 @@ Public Class HitungPenggajian
 
 
             CBIdPegawai.DataSource = table1
-            CBIdPegawai.DisplayMember = "id_karyawan"
+            CBIdPegawai.DisplayMember = "nama"
             CBIdPegawai.ValueMember = "id_karyawan"
+            CBIdPegawai.Text = "Pilih Karyawan"
+
+
 
         Catch ex As Exception
 
@@ -107,6 +110,7 @@ Public Class HitungPenggajian
             Dim table1 As New DataTable
 
             da.Fill(table1)
+
             TxtGaji.Text = table1(0)(0)
 
 

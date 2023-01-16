@@ -1,4 +1,6 @@
-﻿Public Class AbsensiKaryawan
+﻿Imports System.ComponentModel
+
+Public Class AbsensiKaryawan
 
 
     Private Sub BtnFormAbsensi_Click(sender As Object, e As EventArgs) Handles BtnFormAbsensi.Click
@@ -11,4 +13,5 @@
         Login.Show()
         'Me.Hide()
     End Sub
+
 End Class

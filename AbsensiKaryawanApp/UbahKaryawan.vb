@@ -51,6 +51,7 @@ Public Class UbahKaryawan
     End Sub
     Private Sub UbahKaryawan_Load(sender As Object, e As EventArgs) Handles Me.Load
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
+        Me.CenterToScreen()
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn

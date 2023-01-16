@@ -63,7 +63,19 @@ Public Class Karyawan
 
     End Sub
 
-    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Karyawan_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.CenterToScreen()
+    End Sub
+
+    Private Sub Karyawan_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        AdminDashboard.Show()
+    End Sub
+
+    Private Sub BtnBack_Click_1(sender As Object, e As EventArgs) Handles BtnBack.Click
         AdminDashboard.Show()
         Me.Hide()
     End Sub

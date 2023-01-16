@@ -33,9 +33,9 @@ Partial Class AbsensiKaryawan
         Me.BtnLogin.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BtnLogin.Font = New System.Drawing.Font("Myanmar Text", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnLogin.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.BtnLogin.Location = New System.Drawing.Point(112, 213)
+        Me.BtnLogin.Location = New System.Drawing.Point(307, 250)
         Me.BtnLogin.Name = "BtnLogin"
-        Me.BtnLogin.Size = New System.Drawing.Size(193, 63)
+        Me.BtnLogin.Size = New System.Drawing.Size(294, 63)
         Me.BtnLogin.TabIndex = 0
         Me.BtnLogin.Text = "Login"
         Me.BtnLogin.UseVisualStyleBackColor = False
@@ -45,9 +45,9 @@ Partial Class AbsensiKaryawan
         Me.BtnFormAbsensi.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnFormAbsensi.Font = New System.Drawing.Font("Myanmar Text", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnFormAbsensi.ForeColor = System.Drawing.Color.Black
-        Me.BtnFormAbsensi.Location = New System.Drawing.Point(112, 304)
+        Me.BtnFormAbsensi.Location = New System.Drawing.Point(307, 337)
         Me.BtnFormAbsensi.Name = "BtnFormAbsensi"
-        Me.BtnFormAbsensi.Size = New System.Drawing.Size(193, 57)
+        Me.BtnFormAbsensi.Size = New System.Drawing.Size(294, 57)
         Me.BtnFormAbsensi.TabIndex = 5
         Me.BtnFormAbsensi.Text = "Absensi"
         Me.BtnFormAbsensi.UseVisualStyleBackColor = True
@@ -59,7 +59,7 @@ Partial Class AbsensiKaryawan
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label1.Location = New System.Drawing.Point(-2, -1)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(453, 60)
+        Me.Label1.Size = New System.Drawing.Size(915, 60)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Absensi Karyawan"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -67,7 +67,7 @@ Partial Class AbsensiKaryawan
         'Label6
         '
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label6.Location = New System.Drawing.Point(30, 138)
+        Me.Label6.Location = New System.Drawing.Point(285, 128)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(377, 25)
         Me.Label6.TabIndex = 18
@@ -77,7 +77,7 @@ Partial Class AbsensiKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(443, 481)
+        Me.ClientSize = New System.Drawing.Size(913, 504)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnFormAbsensi)

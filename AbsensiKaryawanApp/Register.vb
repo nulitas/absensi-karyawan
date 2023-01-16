@@ -51,4 +51,8 @@
     Private Sub Register_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Login.Show()
     End Sub
+
+    Private Sub Register_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.CenterToScreen()
+    End Sub
 End Class

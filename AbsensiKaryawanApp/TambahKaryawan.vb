@@ -47,7 +47,7 @@ Public Class TambahKaryawan
 
     Private Sub TambahKaryawan_Load(sender As Object, e As EventArgs) Handles Me.Load
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
-
+        Me.CenterToScreen()
         Try
 
 
@@ -65,7 +65,7 @@ Public Class TambahKaryawan
             CBJabatan.DataSource = table1
             CBJabatan.DisplayMember = "nama_jabatan"
             CBJabatan.ValueMember = "id_jabatan"
-
+            CBJabatan.Text = "Pilih Jabatan"
         Catch ex As Exception
 
         Finally

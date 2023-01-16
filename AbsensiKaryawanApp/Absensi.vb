@@ -76,4 +76,9 @@
     Private Sub Absensi_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         AdminDashboard.Show()
     End Sub
+
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+        AdminDashboard.Show()
+        Me.Hide()
+    End Sub
 End Class

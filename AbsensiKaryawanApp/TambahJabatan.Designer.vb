@@ -39,7 +39,7 @@ Partial Class TambahJabatan
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 160)
+        Me.Label1.Location = New System.Drawing.Point(243, 144)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(104, 20)
         Me.Label1.TabIndex = 0
@@ -48,7 +48,7 @@ Partial Class TambahJabatan
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 227)
+        Me.Label2.Location = New System.Drawing.Point(243, 211)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 20)
         Me.Label2.TabIndex = 1
@@ -69,7 +69,7 @@ Partial Class TambahJabatan
         Me.BtnTambah.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BtnTambah.Font = New System.Drawing.Font("Myanmar Text", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnTambah.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.BtnTambah.Location = New System.Drawing.Point(270, 290)
+        Me.BtnTambah.Location = New System.Drawing.Point(476, 274)
         Me.BtnTambah.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BtnTambah.Name = "BtnTambah"
         Me.BtnTambah.Size = New System.Drawing.Size(144, 46)
@@ -88,7 +88,7 @@ Partial Class TambahJabatan
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(515, 466)
+        Me.Panel1.Size = New System.Drawing.Size(889, 466)
         Me.Panel1.TabIndex = 5
         '
         'Label3
@@ -98,7 +98,7 @@ Partial Class TambahJabatan
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label3.Location = New System.Drawing.Point(-1, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(890, 48)
+        Me.Label3.Size = New System.Drawing.Size(889, 48)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "# Tambah Jabatan"
         '
@@ -106,7 +106,7 @@ Partial Class TambahJabatan
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.TxtNamaJabatan)
-        Me.Panel3.Location = New System.Drawing.Point(154, 151)
+        Me.Panel3.Location = New System.Drawing.Point(360, 135)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(264, 39)
         Me.Panel3.TabIndex = 8
@@ -125,7 +125,7 @@ Partial Class TambahJabatan
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.TxtGaji)
-        Me.Panel2.Location = New System.Drawing.Point(154, 217)
+        Me.Panel2.Location = New System.Drawing.Point(360, 201)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(264, 39)
         Me.Panel2.TabIndex = 7
@@ -134,7 +134,7 @@ Partial Class TambahJabatan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(539, 494)
+        Me.ClientSize = New System.Drawing.Size(913, 504)
         Me.Controls.Add(Me.Panel1)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "TambahJabatan"

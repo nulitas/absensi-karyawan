@@ -75,7 +75,7 @@ Partial Class UbahKaryawan
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Location = New System.Drawing.Point(18, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(764, 426)
+        Me.Panel1.Size = New System.Drawing.Size(883, 480)
         Me.Panel1.TabIndex = 13
         '
         'PictureBox1
@@ -94,7 +94,7 @@ Partial Class UbahKaryawan
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label4.Location = New System.Drawing.Point(-1, -1)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(764, 56)
+        Me.Label4.Size = New System.Drawing.Size(890, 56)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "# Edit Karyawan"
         '
@@ -216,7 +216,7 @@ Partial Class UbahKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(913, 504)
         Me.Controls.Add(Me.TxtNik)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "UbahKaryawan"
