@@ -13,6 +13,7 @@
     End Sub
     Private Sub Penggajian_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         DataGridViewPenggajian.DataSource = penggajian.GetDataPenggajian()
+        DataGridViewPenggajian.Rows(0).Cells(0).Selected = False
     End Sub
 
     Private Sub BtnHitungGaji_Click(sender As Object, e As EventArgs) Handles BtnHitungGaji.Click
