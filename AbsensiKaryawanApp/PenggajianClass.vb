@@ -262,7 +262,7 @@ Public Class PenggajianClass
 
             sqlQuery = "UPDATE penggajian
                         SET total_gaji=" & total_gaji &
-                        "WHERE id_penggajian= " & id_penggajian & ";"
+                        " WHERE id_penggajian= " & id_penggajian & ";"
 
             Debug.Print(sqlQuery)
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)

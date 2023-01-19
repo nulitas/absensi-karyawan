@@ -39,4 +39,8 @@ Public Class UbahPenggajian
         CBBulan.DataSource = Penggajian.penggajian.GetMonthDate
         CBIdPegawai.DataSource = Penggajian.penggajian.GetListKaryawan
     End Sub
+
+    Private Sub UbahPenggajian_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.CenterToScreen()
+    End Sub
 End Class

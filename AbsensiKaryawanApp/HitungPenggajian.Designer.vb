@@ -32,14 +32,14 @@ Partial Class HitungPenggajian
         Me.CBIdPegawai = New System.Windows.Forms.ComboBox()
         Me.BtnHitungGaji = New System.Windows.Forms.Button()
         Me.CBBulan = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.LblNamaPegawai)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -143,17 +143,16 @@ Partial Class HitungPenggajian
         Me.CBBulan.Size = New System.Drawing.Size(245, 28)
         Me.CBBulan.TabIndex = 6
         '
-        'Label3
+        'Label2
         '
-        Me.Label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Font = New System.Drawing.Font("Myanmar Text", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label3.Location = New System.Drawing.Point(-1, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(889, 40)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "# Form Hitung Gaji"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.Font = New System.Drawing.Font("Myanmar Text", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label2.Location = New System.Drawing.Point(-1, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(889, 56)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "# Hitung Penggajian"
         '
         'HitungPenggajian
         '
@@ -175,9 +174,9 @@ Partial Class HitungPenggajian
     Friend WithEvents LblNamaPegawai As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents CBIdPegawai As ComboBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents TxtTotalGaji As TextBox
     Friend WithEvents TxtGaji As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label2 As Label
 End Class
