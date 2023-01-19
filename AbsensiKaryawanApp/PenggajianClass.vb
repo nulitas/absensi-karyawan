@@ -122,7 +122,8 @@ Public Class PenggajianClass
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT id_karyawan AS 'ID',
+        sqlCommand.CommandText = "SELECT id_penggajian AS 'No',
+                                  id_karyawan AS 'ID',
                                   bulan_ke as 'Bulan Ke',
                                   total_gaji as 'Total Gaji'
                    
@@ -231,22 +232,21 @@ Public Class PenggajianClass
         End Try
     End Sub
 
-    Public Function getPenggajianByID(GSID As Integer) As List(Of String)
+    Public Function getPenggajianByID(ID As Integer) As List(Of String)
         Dim result As New List(Of String)
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT id_karyawan,
+        sqlCommand.CommandText = "SELECT id_penggajian, id_karyawan,
                                   bulan_ke,
                                   total_gaji
-                   
-                                  FROM penggajian WHERE id_penggajian =" + GSID
+                                  FROM penggajian WHERE id_penggajian =" & ID & ";"
         sqlRead = sqlCommand.ExecuteReader
         sqlRead.Read()
         If sqlRead.HasRows Then
-            result.Add(sqlRead.GetString(0))
-            result.Add(sqlRead.GetString(1))
-            result.Add(sqlRead.GetString(2))
+            result.Add(sqlRead.GetString(1).ToString())
+            result.Add(sqlRead.GetString(2).ToString())
+            result.Add(sqlRead.GetString(3).ToString())
         End If
         sqlRead.Close()
         dbConn.Close()
@@ -254,7 +254,6 @@ Public Class PenggajianClass
     End Function
 
     Public Function UpdateDataPenggajianByID(total_gaji As Integer)
-
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
@@ -263,11 +262,14 @@ Public Class PenggajianClass
 
             sqlQuery = "UPDATE penggajian
                         SET total_gaji=" & total_gaji &
-                        "WHERE id_karyawan= " & id_karyawan & ";"
+                        "WHERE id_penggajian= " & id_penggajian & ";"
 
             Debug.Print(sqlQuery)
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
+
+            sqlRead.Read()
+
             dbConn.Close()
 
             sqlRead.Close()

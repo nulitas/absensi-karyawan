@@ -18,10 +18,10 @@ Public Class UbahPenggajian
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-
+        loadCBData()
         'LblNamaPegawai.Text = Penggajian.penggajian.GSNama
-        CBIdPegawai.Text = Penggajian.penggajian.GSIdKaryawan
-        CBBulan.Text = Penggajian.penggajian.GSBulan
+        CBIdPegawai.SelectedItem = Penggajian.penggajian.GSIdKaryawan
+        CBBulan.SelectedItem = Penggajian.penggajian.GSBulan
         TxtUbahGaji.Text = Penggajian.penggajian.GSTotalGaji
 
     End Sub
@@ -33,5 +33,10 @@ Public Class UbahPenggajian
 
         Penggajian.penggajian.UpdateDataPenggajianByID(Penggajian.penggajian.GSTotalGaji)
         Me.Close()
+    End Sub
+
+    Sub loadCBData()
+        CBBulan.DataSource = Penggajian.penggajian.GetMonthDate
+        CBIdPegawai.DataSource = Penggajian.penggajian.GetListKaryawan
     End Sub
 End Class

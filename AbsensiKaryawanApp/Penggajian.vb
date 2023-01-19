@@ -33,7 +33,7 @@
         Try
             Dim selectedGajiKaryawan As List(Of String) = penggajian.getPenggajianByID(selectedGaji)
 
-            penggajian.GSIdPenggajian = selectedGaji()
+            penggajian.GSIdPenggajian = selectedGaji
             penggajian.GSIdKaryawan = selectedGajiKaryawan(0)
             penggajian.GSBulan = selectedGajiKaryawan(1)
             penggajian.GSTotalGaji = selectedGajiKaryawan(2)
