@@ -253,4 +253,32 @@ Public Class PenggajianClass
         Return result
     End Function
 
+    Public Function UpdateDataPenggajianByID(total_gaji As Integer)
+
+        dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+
+
+            sqlQuery = "UPDATE penggajian
+                        SET total_gaji=" & total_gaji &
+                        "WHERE id_karyawan= " & id_karyawan & ";"
+
+            Debug.Print(sqlQuery)
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+
+    End Function
+
+
 End Class
