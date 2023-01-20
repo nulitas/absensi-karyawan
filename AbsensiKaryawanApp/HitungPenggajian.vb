@@ -128,13 +128,13 @@ Public Class HitungPenggajian
         'ini kondisi kalo lewat jam 9
         Penggajian.penggajian.GSBulan = CBBulan.SelectedValue
 
-        Dim Day = Penggajian.penggajian.getDayCount(Penggajian.penggajian.GSBulan)
-        Dim lateDay = Penggajian.penggajian.GetLateDay(Penggajian.penggajian.GSBulan)
+        Dim Day = Penggajian.penggajian.getDayCount(Penggajian.penggajian.GSBulan, Integer.Parse(CBIdPegawai.SelectedValue))
+        Dim lateDay = Penggajian.penggajian.GetLateDay(Penggajian.penggajian.GSBulan, Integer.Parse(CBIdPegawai.SelectedValue))
 
         Dim potongan = TxtGaji.Text * (2 / 100)
         Dim total = Day * TxtGaji.Text
         If lateDay > 0 Then
-            total -= (lateDay * potongan)
+            total = total - (lateDay * potongan)
         End If
         TxtTotalGaji.Text = total
 

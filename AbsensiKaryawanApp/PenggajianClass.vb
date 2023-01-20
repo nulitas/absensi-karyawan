@@ -160,13 +160,15 @@ Public Class PenggajianClass
 
     End Function
 
-    Public Function getDayCount(Month As Integer) As Integer
+    Public Function getDayCount(Month As Integer, ID As Integer) As Integer
         Dim result As Integer = 0
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "SELECT count(*) FROM absensi WHERE MONTH(tanggal) = '" & Month & "';"
+            sqlQuery = "SELECT count(*) FROM absensi WHERE MONTH(tanggal) = '" & Month & "' AND id_karyawan = " & ID & ";"
 
+
+            MsgBox(sqlQuery)
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
             sqlRead.Read()
@@ -184,12 +186,12 @@ Public Class PenggajianClass
         End Try
     End Function
 
-    Public Function GetLateDay(Month As Integer) As Integer
+    Public Function GetLateDay(Month As Integer, ID As Integer) As Integer
         Dim result As Integer = 0
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "SELECT count(*) FROM absensi WHERE MONTH(tanggal) = '" & Month & "' 
+            sqlQuery = "SELECT count(*) FROM absensi WHERE MONTH(tanggal) = '" & Month & " AND id_karyawan = " & ID & "' 
                         AND waktu_absen_masuk > '09:00:00';"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
