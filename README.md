@@ -3,11 +3,6 @@
 <br>
 Project UAS Visual Basic Semester 3
 
-+ Harits Taqiy Wibowo (2107411034)
-+ Andra Rizki Pratama (2107411043)
-+ Muhammad Asaduddin (2107411046)
-+ Putra Ravelyon (2107411050)
-
 <hr>
 <h2 style="font-weight: 700">Requirement</h2>
 <hr>
@@ -47,4 +42,20 @@ Project UAS Visual Basic Semester 3
 - Penggajian (id_karyawan, bulan_ke, total_gaji)
 
 <br>
+
+## Built With
+
+- Visual Basic
+- MySQL
+
+## Authors
+<!-- <div align="center"> -->
+Name                                                        | NIM
+--                                                          | --
+[Harits Taqiy Wibowo](https://github.com/heolazz)           | 2107411034
+[Andra Rizki Pratama](https://github.com/nulitas)           | 2107411043
+[Muhammad Asaduddin](https://github.com/zachisoni)          | 2107411046
+[Putra Ravelyon](https://github.com/starlyon)               | 2107411050
+<!-- </div> -->
+
 
